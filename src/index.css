@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+}
+
+body {
+  min-height: 100vh;
+}
+nav {
+  width: 100%;
+  height: 45px;
+  background-color: #005f73;
+  position: fixed;
+  display: inline-block;
+}
+
+.logo-nav {
+  height: 40px;
+  padding-left: 10px;
+  vertical-align: bottom;
+}
+.activity {
+  padding-left: 60%;
+}
+.activity-1 {
+  padding-left: 60px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem 0.5rem;
+}
+
+.section-login {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: #0a9396;
+  border-radius: 7px;
+  position: relative;
+}
+
+.logo-burger {
+  width: 100%;
+  max-width: 100px;
+  position: absolute;
+  top: -60px;
+  bottom: 0;
+  right: 0;
+  left: 36%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+h1 {
+  font-size: 1.1rem;
+  margin-top: 50px;
+}
+input[type="email"],
+input[type="password"],
+button {
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+label,
+button {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+}
+.need-account {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-top: 20px;
+}
+
+/*  estilos del home*/
+.section-home {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  min-height: 100vh;
+}
+.button-home {
+  display: grid;
+  grid-template-columns: repeat(2, 10%);
+  gap: 10px;
+}
+.button-home button {
+  background-color: #ee9b00;
+  margin-left: 10px;
+}
+.breackfa {
+  display: grid;
+  grid-template-columns: repeat(2, 20%);
+  gap: 10px;
+}
+.breackfa button {
+  background-color: #ca6702;
+  margin-left: 10px;
+}
+
+/* estilos de la table */
+
+.item-table {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-top: 20px;
+  position: absolute;
+  right: 0;
+  min-height: 50vh;
+}
+table {
+  width: 80%;
+  height: auto;
+  border-collapse: collapse;
+  background-color: #94d2bd;
+  border-radius: 7px;
+}
+th,
+td {
+  border: 1px solid #005f73;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #005f73;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  table,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+  }
+
+  td {
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* Estilos de loading*/
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #005f73;
+  transition: opacity 0.75s, visibility 0.75s;
+}
+.loader::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid #ee9b00;
+  border-top-color: #dddddd;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+/* button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */

@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav>
       <a href="#">
-        <img className="logo-nav" src={LogoBurguer} alt="logo-burger" />
+        <img className="logo-nav"src={LogoBurguer} alt="logo-burger"/>
         BURGER QUEEN
       </a>
       <a className="activity" href="#" id="active">
@@ -23,7 +23,8 @@ export default function Navbar() {
           navigate("/login");
         }}
       >
-        Cerrar sesión
+        {" "}
+        Cerrar sesión <i className="fa-solid fa-right-from-bracket"></i>
       </a>
     </nav>
   );

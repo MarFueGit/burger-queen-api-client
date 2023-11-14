@@ -7,42 +7,76 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+
+  const [error, setError] = useState<boolean>(false); // nos dice si hay error o no
+  const [errorMessage, setErrorMessage] = useState<string>(""); // guarda el mensaje de error
   // usamos el hook useNavigate para navegar a login
   const navigate = useNavigate();
 
   return (
     <main className="main-container">
+      {error ? (
+        <div className="container-toast">
+          <div className="toast error">
+            <div className="container-1">
+              <i className="fas fa-times-circle"></i>
+            </div>
+            <div className="container-2">
+              <p>Error</p>
+              <p>{errorMessage}</p>
+            </div>
+            <button onClick={() => {
+              setError(false)
+              setErrorMessage('')
+            }}>&times;</button>
+          </div>
+        </div>
+      ) : null}
       <section className="section-login">
         <img className="logo-burger" src={LogoBurguer} alt="logo burguer" />
         <h1>WELCOME TO BURGER QUEEN</h1>
         <form action="">
           <label htmlFor="">Email</label>
           <input
-            type="email" name="email"
+            type="email"
+            name="email"
+            placeholder="Your email"
             onChange={(event) => setEmail(event.target.value)}
+            value={email}
           />
 
           <label htmlFor="">Password </label>
           <input
-            type="password" name="password"
+            type="password"
+            name="password"
+            placeholder="Your password"
             onChange={(event) => setPassword(event.target.value)}
+            value={password}
           />
 
           <button
+            className="boton-sign"
             onClick={async (event) => {
               event.preventDefault();
               const response: Token = await login(email, password);
               console.log("response:", response);
-              localStorage.setItem("token", response.accessToken);
-              navigate("/");
+              if (response.accessToken) { // Si la respuesta es correcta me manda a home
+                localStorage.setItem("token", response.accessToken);
+                navigate("/");
+              } else { //Si no es correcta mostramos el mensaje de error 
+                setError(true);
+                setErrorMessage(String(response));
+                setEmail("") // Receteamos los inputs
+                setPassword("")
+              }
             }}
           >
             Sign In
           </button>
-          <p className="need-account">
+          {/* <p className="need-account">
             Need an Account? <br />
             <a href="#"></a>Sign In
-          </p>
+          </p> */}
         </form>
       </section>
     </main>

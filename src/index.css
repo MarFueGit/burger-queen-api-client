@@ -1,39 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+/* Estilos del toas*/
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.toast{
+  width: 500px;
+  height: 80px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 7px;
+  display: grid;
+  grid-template-columns: 1.3fr 6fr 0.5fr;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 0;
+  
+  
 }
-
-html {
-  font-family: "Nunito", sans-serif;
-  font-size: 22px;
+.error{
+  border-left: 8px solid #ff355b;
 }
-
-body {
-  min-height: 100vh;
-}
-nav {
-  width: 100%;
-  height: 45px;
-  background-color: #005f73;
-  position: fixed;
-  display: inline-block;
-}
-
-.logo-nav {
-  height: 40px;
-  padding-left: 10px;
-  vertical-align: bottom;
-}
-.activity {
-  padding-left: 60%;
-}
-.activity-1 {
-  padding-left: 60px;
+.error i{
+  color: #ff355b;
 }
 
+
+.toast button{
+  align-self: flex-start;
+  background-color: transparent;
+  font-size: 25px;
+  color: #656565;
+  line-height: 0;
+  cursor: pointer;
+}
+/* Estilos de login*/
 .main-container {
   display: flex;
   flex-direction: column;
@@ -79,59 +78,129 @@ h1 {
 }
 input[type="email"],
 input[type="password"],
-button {
+.boton-sign {
   font-family: "Nunito", sans-serif;
   font-size: 22px;
   padding: 0.25rem;
   border-radius: 0.5rem;
 }
 label,
-button {
+.boton-sign {
   margin-top: 1rem;
 }
 
-button {
-  padding: 0.5rem;
+.boton-sign:hover{
+  background-color: #ca6702;
+  transform: scale(1.1);
 }
+
 .need-account {
   display: inline-block;
   font-size: 0.75rem;
   margin-top: 20px;
+}
+/* estilos del Nabvar*/
+nav {
+  width: 100%;
+  height: 45px;
+  background-color: #005f73;
+  position: fixed;
+  display: inline-block;
+}
+
+.logo-nav {
+  height: 40px;
+  padding-left: 10px;
+  vertical-align: bottom;
+}
+.activity {
+  padding-left: 60%;
+}
+.activity-1 {
+  padding-left: 60px;
 }
 
 /*  estilos del home*/
 .section-home {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 100px;
   min-height: 100vh;
+  width: 50%;
 }
 .button-home {
-  display: grid;
-  grid-template-columns: repeat(2, 10%);
-  gap: 10px;
+display:grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto;
+gap: 40px;
+
+  
+ 
+
 }
 .button-home button {
+  width: 180px;
+  padding: 5px;
   background-color: #ee9b00;
-  margin-left: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+ 
+}
+.button-breack:hover {
+  background-color: #ca6702;
+  transform: scale(1.1);
+}
+.button-comida:hover {
+  background-color: #ca6702;
+  transform: scale(1.1);
+}
+.list-menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  padding-top: 40px;
+  text-align: center;
+  gap: 20px;
+ 
+}
+.list-menu img {
+  max-width: 100%;
+  width: 50px;
+  padding-top: 5px;
+ 
+}
+
+.fa-mug-hot{
+  font-size: 40px;
+  color: #ee9b00;
+  padding-top: 10px;
 }
 .breackfa {
-  display: grid;
-  grid-template-columns: repeat(2, 20%);
-  gap: 10px;
+  border: 1px solid #ee9b00;
+  margin: 10px;
+  border-radius: 10px;
+  
 }
-.breackfa button {
+.button-agregar {
+  width: 120px;
+  padding: 5px;
+  background-color: #ee9b00;
+  margin-top: 30px;
+}
+.button-agregar:hover {
   background-color: #ca6702;
-  margin-left: 10px;
+  transform: scale(1.1);
 }
+
 
 /* estilos de la table */
 
 .item-table {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  padding-top: 20px;
+  width: 45%;
+  align-items: center;
   position: absolute;
   right: 0;
   min-height: 50vh;
@@ -145,7 +214,7 @@ table {
 }
 th,
 td {
-  border: 1px solid #005f73;
+ 
   padding: 8px;
   text-align: left;
 }
@@ -153,6 +222,21 @@ td {
 th {
   background-color: #005f73;
   color: white;
+}
+.button-table{
+  width: 150px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ee9b00;
+ 
+}
+.button-table:hover{
+  background-color: #ca6702;
+  transform: scale(1.1);
+}
+.fa-trash{
+  color: #ca6702;
+  
 }
 
 @media (max-width: 600px) {
@@ -211,35 +295,3 @@ th {
   }
 }
 
-
-/* button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */

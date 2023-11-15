@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
 }
 a{
-    color: #fff;
+    /* color: #fff; */
     text-decoration: none;
     font-size: 18px;
 }

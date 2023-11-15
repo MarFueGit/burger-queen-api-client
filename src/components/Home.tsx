@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 // import imgCoffe from "../assets/coffe-american.png";
-import imgCoffeMilk from "../assets/coffe-milk.jpg";
-import imgSandwich from "../assets/sandwiche.jpg";
-import imgJugoFruta from "../assets/jugos-frutas.png";
+import imgCoffeMilk from "../assets/coffe-milk-removebg-preview.png";
+import imgSandwich from "../assets/sandwiche-removebg-preview.png";
+import imgJugoFruta from "../assets/jugospng.png";
+import imgCoffeAmericano from "../assets/cafe-americano-removebg.png";
 
 export default function Home() {
   // usamos el hook useNavigate para navegar a login
@@ -27,11 +28,7 @@ export default function Home() {
         </div>
         <div className="list-menu">
           <div className="breackfa">
-            <img
-              className="image-coffe"
-              src={"https://img.icons8.com/color/96/cafe--v1.png"}
-              alt="imagen cafe"
-            />
+            <img src={imgCoffeAmericano} alt="imagen cafe" />
             <p>
               {" "}
               Cafe Americano <br />
@@ -40,7 +37,7 @@ export default function Home() {
             <button className="button-agregar">Agregar</button>
           </div>
           <div className="breackfa">
-            <img className="image-coffe" src={"https://img.icons8.com/color/96/cafe--v1.png"} alt="imagen cafe" />
+            <img src={imgCoffeMilk} alt="imagen cafe" />
             <p>
               {" "}
               Cafe con leche <br />
@@ -49,7 +46,7 @@ export default function Home() {
             <button className="button-agregar">Agregar</button>
           </div>
           <div className="breackfa">
-            <img className="image-coffe" src={"https://img.icons8.com/color/96/cafe--v1.png"} alt="imagen cafe" />
+            <img src={imgSandwich} alt="imagen sandwich" />
             <p>
               Sandwich de jamón y queso
               <br />
@@ -58,7 +55,7 @@ export default function Home() {
             <button className="button-agregar">Agregar</button>
           </div>
           <div className="breackfa">
-            <img className="image-coffe" src={"https://img.icons8.com/color/96/cafe--v1.png"} alt="imagen cafe" />
+            <img src={imgJugoFruta} alt="imagen jugo" />
             <p>
               Jugo de frutas natural
               <br />
@@ -104,7 +101,9 @@ export default function Home() {
                 <td>$22.00</td>
               </tr>
               <tr>
-               <td><button className="button-table">Enviar a cocina</button></td>
+                <td>
+                  <button className="button-table">Enviar a cocina</button>
+                </td>
               </tr>
             </tbody>
           </table>

@@ -1,0 +1,144 @@
+/*  estilos del home*/
+.section-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    min-height: 100vh;
+    width: 50%;
+    
+  }
+  .button-home {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 40px;
+  
+  }
+  .button-home button {
+    width: 180px;
+    padding: 5px;
+    background-color: #ee9b00;
+    font-size: 0.8em;
+    font-weight: bold;
+   
+  }
+  .button-breack:hover {
+    background-color: #ca6702;
+    transform: scale(1.1);
+  }
+  .button-comida:hover {
+    background-color: #ca6702;
+    transform: scale(1.1);
+  }
+  .list-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding-top: 40px;
+    text-align: center;
+    gap: 20px;
+   
+  }
+  .list-menu img {
+    max-width: 100%;
+    width: 50px;
+    height: 55px;
+    padding-top: 5px;
+   
+  }
+  
+  
+  .fa-mug-hot{
+    font-size: 40px;
+    color: #ee9b00;
+    padding-top: 10px;
+  }
+  .breackfa {
+    border: 1px solid #ee9b00;
+    margin: 10px;
+    border-radius: 10px;
+    
+  }
+  .button-agregar {
+    width: 120px;
+    padding: 5px;
+    background-color: #ee9b00;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  .button-agregar:hover {
+    background-color: #ca6702;
+    transform: scale(1.1);
+  }
+  
+  
+  /* estilos de la table */
+  
+  .item-table {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    min-height: auto;
+    
+  
+  }
+  table {
+    width: 80%;
+    height: auto;
+    border-collapse: collapse;
+   background-color: #94d2bd;
+    border-radius: 7px;
+  }
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #005f73;
+    color: white;
+  }
+  .button-table{
+    width: 150px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ee9b00;
+   
+  }
+  .button-table:hover{
+    background-color: #ca6702;
+    transform: scale(1.1);
+  }
+  .fa-trash{
+    color: #ca6702;
+    
+  }
+  
+  @media (max-width: 600px) {
+    table,
+    tr,
+    th,
+    td {
+      display: block;
+    }
+  
+    th {
+      display: none;
+    }
+  
+    tr {
+      margin-bottom: 15px;
+    }
+  
+    td {
+      text-align: right;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  

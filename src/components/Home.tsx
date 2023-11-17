@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
-// import imgCoffe from "../assets/coffe-american.png";
 import imgCoffeMilk from "../assets/coffe-milk-removebg-preview.png";
 import imgSandwich from "../assets/sandwiche-removebg-preview.png";
 import imgJugoFruta from "../assets/jugospng.png";
 import imgCoffeAmericano from "../assets/cafe-americano-removebg.png";
+import "../components/Home.css"
 
 export default function Home() {
   // usamos el hook useNavigate para navegar a login

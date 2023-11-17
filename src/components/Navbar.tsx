@@ -1,5 +1,6 @@
 import logoBurger from "../assets/logo-burger-queen.png";
 import { useNavigate } from "react-router-dom";
+import "../components/Navbar.css";
 
 export default function Navbar() {
   // usamos el hook useNavigate para navegar a login

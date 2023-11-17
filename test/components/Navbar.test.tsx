@@ -1,9 +1,10 @@
+import React from "react";
 import Navbar from "../../src/components/Navbar";
 import { fireEvent, render } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 
 describe("Navbar components", () => {
-  it("should ", () => {
+  it("should render Navbar with navigation links", () => {
     // 1. Preparar / arrange
     const { getByText } = render(
       <BrowserRouter>

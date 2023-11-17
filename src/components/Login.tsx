@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import LogoBurguer from "../assets/logo-burger-queen.png";
 import { Token } from "../types/types";
 import { login } from "../services/auth.service";
 import { useNavigate } from "react-router-dom";
+import "../components/Login.css";
 
 export default function Login() {
   const [email, setEmail] = useState<string>("");
@@ -23,12 +24,16 @@ export default function Login() {
             </div>
             <div className="container-2">
               <p>Error</p>
-              <p>{errorMessage}</p>
+              <p data-testid={"messageToast"}>{errorMessage}</p>
             </div>
-            <button onClick={() => {
-              setError(false)
-              setErrorMessage('')
-            }}>&times;</button>
+            <button data-testid={"buttonToast"}
+              onClick={() => {
+                setError(false);
+                setErrorMessage("");
+              }}
+            >
+              &times;
+            </button>
           </div>
         </div>
       ) : null}
@@ -41,6 +46,7 @@ export default function Login() {
             type="email"
             name="email"
             placeholder="Your email"
+            data-testid={"inputEmail"}
             onChange={(event) => setEmail(event.target.value)}
             value={email}
           />
@@ -50,24 +56,27 @@ export default function Login() {
             type="password"
             name="password"
             placeholder="Your password"
+            data-testid={"inputPassword"}
             onChange={(event) => setPassword(event.target.value)}
             value={password}
           />
 
           <button
-            className="boton-sign"
+            className="boton-sign"   data-testid={"buttonLogin"}
             onClick={async (event) => {
               event.preventDefault();
               const response: Token = await login(email, password);
               console.log("response:", response);
-              if (response.accessToken) { // Si la respuesta es correcta me manda a home
+              if (response.accessToken) {
+                // Si la respuesta es correcta me manda a home
                 localStorage.setItem("token", response.accessToken);
                 navigate("/");
-              } else { //Si no es correcta mostramos el mensaje de error 
+              } else {
+                //Si no es correcta mostramos el mensaje de error
                 setError(true);
                 setErrorMessage(String(response));
-                setEmail("") // Receteamos los inputs
-                setPassword("")
+                setEmail(""); // Receteamos los inputs
+                setPassword("");
               }
             }}
           >

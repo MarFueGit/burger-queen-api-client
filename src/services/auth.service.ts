@@ -15,7 +15,7 @@ export const login = (email: string, password: string): Promise<Token> =>
       },
       body: JSON.stringify(data),
     };
-    fetch(`http://localhost:8080/login`, options)
+    fetch(`https://burger-queen-api-mock-mary.vercel.app/login`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));

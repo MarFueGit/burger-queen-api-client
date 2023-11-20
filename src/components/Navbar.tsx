@@ -1,6 +1,6 @@
 import logoBurger from "../assets/logo-burger-queen.png";
 import { useNavigate } from "react-router-dom";
-import "../components/Navbar.css";
+import "./Navbar.css";
 
 export default function Navbar() {
   // usamos el hook useNavigate para navegar a login
@@ -10,12 +10,19 @@ export default function Navbar() {
       <ul>
         <li>
           <img src={logoBurger} alt="logo burger" />
-          <p>BURGER QUEEN</p>
+          <a onClick={() => navigate("/")}>
+            {" "}
+            <p>BURGER QUEEN</p>
+          </a>
         </li>
         <li className="menu-nav">
           <ul>
             <li>
-              <a href="#">Ingresar pedido </a>
+              <a className="active" onClick={() => navigate("/ingresar-pedido")}>
+                Ingresar pedido{" "}
+              </a>
+              <a href="#">Ver pedidos </a>
+              <a href="#">Pedidos listos</a>
               <a
                 href="#"
                 onClick={(e) => {

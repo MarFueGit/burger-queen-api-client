@@ -121,7 +121,6 @@ export default function IngresarPedido() {
             <thead>
               <tr>
                 <th>Item</th>
-
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Acción</th>
@@ -157,7 +156,6 @@ export default function IngresarPedido() {
                   <button
                     className="button-table"
                     onClick={() => {
-                      console.log("ACA");
                       setConfirm(true);
                     }}
                   >

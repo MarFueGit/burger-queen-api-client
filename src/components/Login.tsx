@@ -39,23 +39,23 @@ export default function Login() {
       ) : null}
       <section className="section-login">
         <img className="logo-burger" src={LogoBurguer} alt="logo burguer" />
-        <h1>WELCOME TO BURGER QUEEN</h1>
+        <h1>BIENVENIDO A BURGER QUEEN</h1>
         <form action="">
           <label htmlFor="">Email</label>
           <input
             type="email"
             name="email"
-            placeholder="Your email"
+            placeholder="Tu correo electrónico"
             data-testid={"inputEmail"}
             onChange={(event) => setEmail(event.target.value)}
             value={email}
           />
 
-          <label htmlFor="">Password </label>
+          <label htmlFor="">Contraseña </label>
           <input
             type="password"
             name="password"
-            placeholder="Your password"
+            placeholder="Tu contraseña"
             data-testid={"inputPassword"}
             onChange={(event) => setPassword(event.target.value)}
             value={password}
@@ -80,7 +80,7 @@ export default function Login() {
               }
             }}
           >
-            Sign In
+            Iniciar sesión
           </button>
           {/* <p className="need-account">
             Need an Account? <br />

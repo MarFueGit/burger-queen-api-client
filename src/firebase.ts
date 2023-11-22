@@ -10,8 +10,8 @@ const firebaseConfig = {
   projectId: "burger-queen-mary",
   storageBucket: "burger-queen-mary.appspot.com",
   messagingSenderId: "288868150071",
-  appId: "1:288868150071:web:1d572fbfbb26ec7ef2c8b2"
+  appId: "1:288868150071:web:1d572fbfbb26ec7ef2c8b2",
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);

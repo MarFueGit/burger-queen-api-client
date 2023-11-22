@@ -62,7 +62,7 @@
     top: -60px;
     bottom: 0;
     right: 0;
-    left: 36%;
+    left: 37%;
   }
   
   form {
@@ -87,6 +87,7 @@
   label,
   .boton-sign {
     margin-top: 1rem;
+    font-weight: bold;
   }
   
   .boton-sign:hover{

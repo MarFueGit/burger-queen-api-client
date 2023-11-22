@@ -18,9 +18,7 @@
   font-size: 0.8em;
   font-weight: bold;
 }
-.tipo-menu-active:hover{
 
-}
 .button-menu {
   width: 180px;
   padding: 5px;
@@ -80,6 +78,7 @@
   position: absolute;
   right: 0;
   min-height: auto;
+  
 }
 table {
   width: 80%;
@@ -87,6 +86,7 @@ table {
   border-collapse: collapse;
   background-color: #94d2bd;
   border-radius: 7px;
+ 
 }
 th,
 td {

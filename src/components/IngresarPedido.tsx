@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import imgCoffeMilk from "../assets/coffe-milk-removebg-preview.png";
-import imgSandwich from "../assets/sandwiche-removebg-preview.png";
-import imgJugoFruta from "../assets/jugospng.png";
-import imgCoffeAmericano from "../assets/cafe-americano-removebg.png";
 import "./IngresarPedido.css";
 import ConfirmacionPedido from "./ConfirmacionPedido";
 import { getProducts } from "../services/products.service";
-import { Product } from "../types/types";
+import { Order, OrderProduct, Product } from "../types/types";
 import { getUniqueTiposMenu } from "../utils";
 
 export default function IngresarPedido() {
@@ -21,6 +17,12 @@ export default function IngresarPedido() {
   const [products, setProducts] = useState<Product[]>([]);
   // Hook para guardar el array de productos de reserva, este solo lo usare de lectura
   const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [userOrder, setUserOrder] = useState<Order>({
+    client: "",
+    dataEntry: "",
+    products: [],
+    status: "pending",
+  });
 
   useEffect(() => {
     getProducts()
@@ -41,6 +43,42 @@ export default function IngresarPedido() {
     );
 
     setProducts(filteredProducts);
+  };
+
+  //Funcion para agregar productos a la orden del usuario
+  const addProduct = (product: Product): void => {
+    const productOrder: OrderProduct = {
+      qty: 1,
+      product,
+    };
+    const arrayProducts: OrderProduct[] = userOrder.products;
+    const indexExist: OrderProduct | number = arrayProducts.findIndex(
+      (order: OrderProduct) => order.product.id === product.id
+    );
+    console.log(" este es un array:", indexExist)
+    if (indexExist > -1) {
+      arrayProducts[indexExist] = {
+        product: arrayProducts[indexExist].product,
+        qty: arrayProducts[indexExist].qty + 1,
+      };
+    } else {
+      arrayProducts.push(productOrder);
+    }
+    setUserOrder({
+      ...userOrder,
+      products: arrayProducts,
+    });
+  };
+
+  //Funcion para eliminar productos
+  const removeProduct = (product: Product): void => {
+    const arrayProducts: OrderProduct[] = userOrder.products.filter(
+      (order: OrderProduct) => order.product.id !== product.id
+    );
+    setUserOrder({
+      ...userOrder,
+      products: arrayProducts,
+    });
   };
 
   return (
@@ -68,7 +106,12 @@ export default function IngresarPedido() {
                 {product.name}
                 <br />${product.price}
               </p>
-              <button className="button-agregar">Agregar</button>
+              <button
+                className="button-agregar"
+                onClick={() => addProduct(product)}
+              >
+                Agregar
+              </button>
             </div>
           ))}
         </div>
@@ -78,41 +121,45 @@ export default function IngresarPedido() {
             <thead>
               <tr>
                 <th>Item</th>
+
                 <th>Precio</th>
+                <th>Cantidad</th>
                 <th>Acción</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Cafe americano</td>
-                <td>$5.00</td>
-                <td>
-                  <i className="fa-solid fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>Sandwich de jamón y queso</td>
-                <td>$10.00</td>
-                <td>
-                  <i className="fa-solid fa-trash"></i>
-                </td>
-              </tr>
-              <tr>
-                <td>Jugo natural</td>
-                <td>$7.00</td>
-                <td>
-                  <i className="fa-solid fa-trash"></i>
-                </td>
-              </tr>
+              {userOrder.products.map((order: OrderProduct, index: number) => (
+                <tr key={index}>
+                  <td>{order.product.name}</td>
+                  <td>${order.product.price}</td>
+                  <td>{order.qty}</td>
+                  <td>
+                    <i
+                      className="fa-solid fa-trash"
+                      onClick={() => removeProduct(order.product)}
+                      key={index}
+                    ></i>
+                  </td>
+                </tr>
+              ))}
               <tr>
                 <td>Total</td>
-                <td>$22.00</td>
+                <td>
+                  $
+                  {userOrder.products.reduce(
+                    (a, b: OrderProduct) => a + b.product.price * b.qty,
+                    0
+                  )}
+                </td>
               </tr>
               <tr>
                 <td>
                   <button
                     className="button-table"
-                    onClick={() => setConfirm(true)}
+                    onClick={() => {
+                      console.log("ACA");
+                      setConfirm(true);
+                    }}
                   >
                     Enviar a cocina
                   </button>

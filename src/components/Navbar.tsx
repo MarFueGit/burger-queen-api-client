@@ -7,7 +7,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   return (
     <nav className="nav-burger">
-      <ul>
+      <ul className="logo-title">
         <li>
           <img src={logoBurger} alt="logo burger" />
           <a onClick={() => navigate("/")}>
@@ -15,30 +15,28 @@ export default function Navbar() {
             <p>BURGER QUEEN</p>
           </a>
         </li>
-        <li className="menu-nav">
-          <ul>
-            <li>
-              <a className="active" onClick={() => navigate("/ingresar-pedido")}>
-                Ingresar pedido{" "}
-              </a>
-              <a href="#">Ver pedidos </a>
-              <a href="#">Pedidos listos</a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  localStorage.removeItem("token");
-                  navigate("/login");
-                }}
-              >
-                Cerrar sesión<i className="fa-solid fa-right-from-bracket"></i>
-              </a>
-            </li>
-            <li className="iconoMenu">
-              <i className="fa-solid fa-bars"></i>
-            </li>
-          </ul>
-        </li>
+        <ul className="menu-nav">
+          <li>
+            <a className="active" onClick={() => navigate("/ingresar-pedido")}>
+              Ingresar pedido{" "}
+            </a>
+            <a href="#">Ver pedidos </a>
+            <a href="#">Pedidos listos</a>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                localStorage.removeItem("token");
+                navigate("/login");
+              }}
+            >
+              Cerrar sesión<i className="fa-solid fa-right-from-bracket"></i>
+            </a>
+          </li>
+          <li className="iconoMenu">
+            <i className="fa-solid fa-bars"></i>
+          </li>
+        </ul>
       </ul>
     </nav>
   );

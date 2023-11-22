@@ -15,9 +15,9 @@ body {
   min-height: 100vh;
 }
 a{
-    /* color: #fff; */
     text-decoration: none;
     font-size: 18px;
+    cursor: pointer;
 }
 
 button{

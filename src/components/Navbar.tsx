@@ -20,7 +20,7 @@ export default function Navbar() {
             <a className="active" onClick={() => navigate("/ingresar-pedido")}>
               Ingresar pedido{" "}
             </a>
-            <a href="#">Ver pedidos </a>
+            <a onClick={() => navigate("/ver-pedidos")}>Ver pedidos </a>
             <a href="#">Pedidos listos</a>
             <a
               href="#"

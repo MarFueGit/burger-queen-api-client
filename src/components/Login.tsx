@@ -26,7 +26,8 @@ export default function Login() {
               <p>Error</p>
               <p data-testid={"messageToast"}>{errorMessage}</p>
             </div>
-            <button data-testid={"buttonToast"}
+            <button
+              data-testid={"buttonToast"}
               onClick={() => {
                 setError(false);
                 setErrorMessage("");
@@ -62,7 +63,8 @@ export default function Login() {
           />
 
           <button
-            className="boton-sign"   data-testid={"buttonLogin"}
+            className="boton-sign"
+            data-testid={"buttonLogin"}
             onClick={async (event) => {
               event.preventDefault();
               const response: Token = await login(email, password);

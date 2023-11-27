@@ -55,7 +55,7 @@ export default function IngresarPedido() {
     const indexExist: OrderProduct | number = arrayProducts.findIndex(
       (order: OrderProduct) => order.product.id === product.id
     );
-    console.log(" este es un array:", indexExist)
+    console.log(" este es un array:", indexExist);
     if (indexExist > -1) {
       arrayProducts[indexExist] = {
         product: arrayProducts[indexExist].product,
@@ -81,10 +81,29 @@ export default function IngresarPedido() {
     });
   };
 
+  //Agregamos el nombre del clinte de tipo strin y lo seteamos dentro de setUserOrder.
+  const addNameClient = (name: string) => {
+    setUserOrder({
+      ...userOrder,
+      client: name,
+    });
+  };
+
+  const resetOrder = () => {
+    setUserOrder({
+      client: "",
+      dataEntry: "",
+      products: [],
+      status: "pending",
+    });
+  };
+
   return (
     <>
       <Navbar />
+      {/* Toast Exito  */}
       <section className="section-home">
+        {/* Fin Toast Exito */}
         <div className="button-home">
           {tiposDeMenu.map((tipoMenu: string, index: number) => (
             <button
@@ -115,7 +134,6 @@ export default function IngresarPedido() {
             </div>
           ))}
         </div>
-
         <div className="item-table">
           <table>
             <thead>
@@ -168,9 +186,11 @@ export default function IngresarPedido() {
         </div>
       </section>
       <ConfirmacionPedido
+        resetOrder={resetOrder}
+        order={userOrder}
+        addNameClient={addNameClient}
         open={confirm}
         setOpen={(open) => setConfirm(open)}
-        onConfirm={() => {}}
       />
     </>
   );

@@ -1,39 +1,64 @@
+/* Estilos del toas*/
 
-/* estilos del Nabvar*/
-/* nav {
-  width: 100%;
-  height: 45px;
-  background-color: #005f73;
-  position: fixed;
-  display: inline-block;
+.toast {
+  width: 500px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 7px;
+
+  display: grid;
+  grid-template-columns: 1.3fr 6fr 0.5fr;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 0;
+  left: 10px;
+  right: 0;
 }
 
-.logo-nav {
-  height: 40px;
-  padding-left: 10px;
-  vertical-align: bottom;
+.toast-success {
+  width: 500px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 7px;
+  display: grid;
+  grid-template-columns: 1.3fr 6fr 0.5fr;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  top: 50%;
+  left: calc(30%);
+  right: 0;
+  z-index: 1;
 }
-.activity {
-  padding-left: 55%;
+.error {
+  border-left: 8px solid #ff355b;
+  background-color: #ffffff;
 }
-.activity-1 {
-  padding-left: 60px;
+.error i {
+  color: #ff355b;
 }
-.fa-right-from-bracket{
-  color: #ee9b00;
-  
-} */
 
+.success {
+  border-left: 8px solid #4dff35;
+  background-color: #ffffff;
+}
+.success i {
+  color: #4dff35;
+}
 
+.toast button {
+  align-self: flex-start;
+  background-color: transparent;
+  font-size: 25px;
+  color: #656565;
+  line-height: 0;
+  cursor: pointer;
+}
 
-
-/* Responsive*/
-/* @media (min-width: 768px) and (max-width: 992px) {
- nav{
-  width: 100%;
-  height: 100%;
-  background-color: #005f73;
-  position: fixed;
-  display: inline-block;
- }
-} */
+.toast-success button {
+  align-self: flex-start;
+  background-color: transparent;
+  font-size: 25px;
+  color: #656565;
+  line-height: 0;
+  cursor: pointer;
+}

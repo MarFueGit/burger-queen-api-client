@@ -1,64 +1,90 @@
-.nav-burger {
-  width: 100%;
-  height: 80px;
+.navbar-menu {
   background-color: #005f73;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  height: 80px;
+  width: 100%;
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
 }
-.nav-burger ul {
-  display: flex;
-  justify-content: space-between;
+
+.enlace {
+  position: absolute;
+  padding: 20px 50px;
 }
-.nav-burger li {
-  display: flex;
-  align-items: center;
-}
-.nav-burger a {
-  color: #dddddd;
-  padding: 30px;
-}
-.nav-burger img {
+.logo-nav {
   height: 40px;
-  padding-left: 10px;
 }
-.nav-burger p {
-  padding-left: 10px;
-  color: #dddddd;
-  font-weight: bold;
+.navbar-menu ul {
+  float: right;
+  margin-right: 20px;
 }
-.fa-right-from-bracket {
-  color: #ee9b00;
-  padding-left: 5px;
-  font-size: 20px;
+.navbar-menu ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 10px;
 }
-.fa-bars {
-  padding-right: 30px;
+.navbar-menu ul li a {
+  color: white;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 5px;
+}
+li a.active,
+li a:hover {
+  background-color: #1b9bff;
+  transition: 0.5s;
+}
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
   display: none;
 }
-
-/* Modo responsive*/
-@media (max-width: 650px) {
- .nav-burger{
-  position: relative;
-  position: fixed;
- }
-  .logo-title p{
-    font-size: 14px;
-    width: 120px;
-    position: absolute;
-    left: 50px;
-    top: 35px;
-    bottom: 0;
-    right: 0;
-  }
-  .menu-nav a{
-display: none;
-
-  }
-  .fa-bars{
+#check {
+  display: none;
+}
+.fa-right-from-bracket{
+  font-size: 20px;
+  padding-left: 5px;
+  color: #ee9b00;
+}
+@media (max-width: 750px) {
+  .checkbtn {
     display: block;
+  }
+  .navbar-menu .fa-bars{
+  position: absolute;
+  right: 40px;
+ bottom: 20px;
+ 
+  }
+  .navbar-menu ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  .navbar-menu ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .navbar-menu ul li a {
+    font-size: 16px;
+  }
+
+  li a:hover,
+  li a.active {
+    background: none;
+  }
+  #check:checked ~ ul {
+    left: 0;
   }
 }

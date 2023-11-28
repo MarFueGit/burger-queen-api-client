@@ -121,7 +121,7 @@ export default function IngresarPedido() {
           {products.map((product: Product, index: number) => (
             <div className="breackfa" key={index}>
               <img src={product.image} alt={product.name} />
-              <p>
+              <p >
                 {product.name}
                 <br />${product.price}
               </p>
@@ -135,7 +135,7 @@ export default function IngresarPedido() {
           ))}
         </div>
         <div className="item-table">
-          <table>
+          <table className="table">
             <thead>
               <tr>
                 <th>Item</th>
@@ -147,10 +147,10 @@ export default function IngresarPedido() {
             <tbody>
               {userOrder.products.map((order: OrderProduct, index: number) => (
                 <tr key={index}>
-                  <td>{order.product.name}</td>
-                  <td>${order.product.price}</td>
-                  <td>{order.qty}</td>
-                  <td>
+                  <td data-label="Item">{order.product.name}</td>
+                  <td data-label="Precio">${order.product.price}</td>
+                  <td data-label="Cantidad">{order.qty}</td>
+                  <td data-label="Acción">
                     <i
                       className="fa-solid fa-trash"
                       onClick={() => removeProduct(order.product)}

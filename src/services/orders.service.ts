@@ -18,3 +18,20 @@ export const sendOrder = (order: Order): Promise<Order> =>
       .then((response) => resolve(response))
       .catch((err) => reject(err));
   });
+
+export const getOrders = (): Promise<Order[]> =>
+  new Promise((resolve, reject) => {
+    const token = localStorage.getItem("token");
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+    fetch(`http://localhost:8080/orders`, options)
+      .then((response) => response.json())
+      .then((response) => resolve(response))
+      .catch((err) => reject(err));
+  });

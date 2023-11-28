@@ -1,6 +1,6 @@
 .container-table {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
   padding-top: 10%;
 }
@@ -55,8 +55,12 @@
   background-color: rgba(0, 95, 115);
 }
 @media screen and (max-width: 600px) {
+  .container-table{
+   padding-top: 100px;
+  }
   .table {
     border: 0px;
+   
   }
   .table caption {
     font-size: 22px;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import "./VerPedidos.css";
-import { Order } from "../types/types";
+import { Order, OrderProduct } from "../types/types";
 import { getOrders } from "../services/orders.service";
 
 export default function VerPedidos() {
@@ -10,7 +10,8 @@ export default function VerPedidos() {
   useEffect(() => {
     getOrders()
       .then((orders: Order[]) => {
-        console.log("dame las ordenes:", orders)
+        console.log("dame las ordenes:", orders);
+        setOrders(orders);
       })
       .catch((error) => console.log("ERROR: ", error));
   }, []);
@@ -27,67 +28,33 @@ export default function VerPedidos() {
               <th>Cliente</th>
               <th>Producto</th>
               <th>Fecha</th>
-              <th>Total</th>
+              <th>Estatus</th>
               <th>Acción</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td data-label="Num. de orden">001</td>
-              <td data-label="Cliente">Juan Perez</td>
-              <td data-label="Producto">
-                <ul>
-                  <li>1 Pizza</li>
-                  <li>1 Ensalada</li>
-                  <li>1 Jugo</li>
-                </ul>
-              </td>
-              <td data-label="Fecha">15:35</td>
-              <td data-label="Total">$40.00</td>
-              <td data-label="Acción">
-                <button>Comenzar a preparar</button>
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Num. de orden">001</td>
-              <td data-label="Cliente">Juan Perez</td>
-              <td data-label="Producto">Pizza, Ensalada, Jugo</td>
-              <td data-label="Fecha">15:35</td>
-              <td data-label="Total">$40.00</td>
-              <td data-label="Acción">
-                <button>Comenzar a preparar</button>
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Num. de orden">001</td>
-              <td data-label="Cliente">Juan Perez</td>
-              <td data-label="Producto">Pizza, Ensalada, Jugo</td>
-              <td data-label="Fecha">15:35</td>
-              <td data-label="Total">$40.00</td>
-              <td data-label="Acción">
-                <button>Comenzar a preparar</button>
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Num. de orden">001</td>
-              <td data-label="Cliente">Juan Perez</td>
-              <td data-label="Producto">Pizza, Ensalada, Jugo</td>
-              <td data-label="Fecha">15:35</td>
-              <td data-label="Total">$40.00</td>
-              <td data-label="Acción">
-                <button>Comenzar a preparar</button>
-              </td>
-            </tr>
-            <tr>
-              <td data-label="Num. de orden">001</td>
-              <td data-label="Cliente">Juan Perez</td>
-              <td data-label="Producto">Pizza, Ensalada, Jugo</td>
-              <td data-label="Fecha">15:35</td>
-              <td data-label="Total">$40.00</td>
-              <td data-label="Acción">
-                <button>Comenzar a preparar</button>
-              </td>
-            </tr>
+            {orders.map((order: Order, index: number) => (
+              <tr key={`${order.dataEntry}-${index}`}>
+                <td data-label="Num. de orden">{index}</td>
+                <td data-label="Cliente">
+                  {order.client === "" ? "Invitado" : order.client}
+                </td>
+                <td data-label="Producto">
+                  <ul>
+                    {order.products.map((product: OrderProduct, i: number) => (
+                      <li key={i}>
+                        {product.qty} {product.product.name}
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+                <td data-label="Fecha">{order.dataEntry}</td>
+                <td data-label="Total">{order.status}</td>
+                <td data-label="Acción">
+                  <button>Comenzar a preparar</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>

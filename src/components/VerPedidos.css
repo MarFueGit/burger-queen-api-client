@@ -37,7 +37,6 @@
   background-color: #ee9b00;
   width: 120px;
   height: auto;
-
 }
 
 .table thead th {
@@ -55,12 +54,11 @@
   background-color: rgba(0, 95, 115);
 }
 @media screen and (max-width: 600px) {
-  .container-table{
-   padding-top: 100px;
+  .container-table {
+    padding-top: 100px;
   }
   .table {
     border: 0px;
-   
   }
   .table caption {
     font-size: 22px;

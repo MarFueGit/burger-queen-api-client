@@ -1,6 +1,6 @@
 .navbar-menu {
   background-color: #005f73;
-  height: 80px;
+  height: 60px;
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -9,6 +9,7 @@
 .enlace {
   position: absolute;
   padding: 20px 50px;
+  bottom: -14px;
 }
 .logo-nav {
   height: 40px;
@@ -19,7 +20,7 @@
 }
 .navbar-menu ul li {
   display: inline-block;
-  line-height: 80px;
+  line-height: 55px;
   margin: 0 10px;
 }
 .navbar-menu ul li a {
@@ -29,7 +30,6 @@
   padding: 7px 13px;
   border-radius: 5px;
 }
-li a.active,
 li a:hover {
   background-color: #1b9bff;
   transition: 0.5s;
@@ -46,20 +46,19 @@ li a:hover {
 #check {
   display: none;
 }
-.fa-right-from-bracket{
+.fa-right-from-bracket {
   font-size: 20px;
   padding-left: 5px;
   color: #ee9b00;
 }
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   .checkbtn {
     display: block;
   }
-  .navbar-menu .fa-bars{
-  position: absolute;
-  right: 40px;
- bottom: 20px;
- 
+  .navbar-menu .fa-bars {
+    position: absolute;
+    right: 40px;
+   bottom: 27%;
   }
   .navbar-menu ul {
     position: fixed;

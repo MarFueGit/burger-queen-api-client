@@ -102,9 +102,10 @@ export default function IngresarPedido() {
     <>
       <Navbar />
       {/* Toast Exito  */}
-      <section className="section-home">
+      <section id="section-home">
         {/* Fin Toast Exito */}
-        <div className="button-home">
+        <div className="button-izquierda">
+          <div className="menu">
           {tiposDeMenu.map((tipoMenu: string, index: number) => (
             <button
               className={
@@ -132,9 +133,11 @@ export default function IngresarPedido() {
                 Agregar
               </button>
             </div>
+             
           ))}
+           </div>
         </div>
-        <div className="item-table">
+        <div className="item-derecha">
           <table className="table">
             <thead>
               <tr>

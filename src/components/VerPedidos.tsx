@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import "./VerPedidos.css";
 import { Order, OrderProduct } from "../types/types";

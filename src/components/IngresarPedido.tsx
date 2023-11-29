@@ -19,7 +19,7 @@ export default function IngresarPedido() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [userOrder, setUserOrder] = useState<Order>({
     client: "",
-    dataEntry: "",
+    dataEntry: `${new Date()}`,
     products: [],
     status: "pending",
   });
@@ -106,36 +106,35 @@ export default function IngresarPedido() {
         {/* Fin Toast Exito */}
         <div className="button-izquierda">
           <div className="menu">
-          {tiposDeMenu.map((tipoMenu: string, index: number) => (
-            <button
-              className={
-                tipoMenu === menuSelected ? "tipo-menu-active" : "button-menu"
-              }
-              key={index}
-              onClick={() => filterProducts(allProducts, tipoMenu)}
-            >
-              {tipoMenu}
-            </button>
-          ))}
-        </div>
-        <div className="list-menu">
-          {products.map((product: Product, index: number) => (
-            <div className="breackfa" key={index}>
-              <img src={product.image} alt={product.name} />
-              <p >
-                {product.name}
-                <br />${product.price}
-              </p>
+            {tiposDeMenu.map((tipoMenu: string, index: number) => (
               <button
-                className="button-agregar"
-                onClick={() => addProduct(product)}
+                className={
+                  tipoMenu === menuSelected ? "tipo-menu-active" : "button-menu"
+                }
+                key={index}
+                onClick={() => filterProducts(allProducts, tipoMenu)}
               >
-                Agregar
+                {tipoMenu}
               </button>
-            </div>
-             
-          ))}
-           </div>
+            ))}
+          </div>
+          <div className="list-menu">
+            {products.map((product: Product, index: number) => (
+              <div className="breackfa" key={index}>
+                <img src={product.image} alt={product.name} />
+                <p>
+                  {product.name}
+                  <br />${product.price}
+                </p>
+                <button
+                  className="button-agregar"
+                  onClick={() => addProduct(product)}
+                >
+                  Agregar
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="item-derecha">
           <table className="table">

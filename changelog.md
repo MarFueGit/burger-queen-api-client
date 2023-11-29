@@ -1,6 +1,6 @@
 ## <0.0.0> - <14/11/2023>
 
-### Sprint learnings
+### Sprint 1
 
 Seguí aprendiendo hooks useNavigate que es para navegar entre rutas, useState que es para actualizar estado de un componente y useEffect se ejecuta cuando se renderiza un componente, y aprendi las partes de una peticion HTTP
 
@@ -23,7 +23,7 @@ Todavia nada
 
 ## <1.1.0> - <21/11/2023>
 
-### Sprint learnings
+### Sprint 2
 
 Seguí aprendiendo hooks useNavigate que es para navegar entre rutas, useState que es para actualizar estado de un componente y useEffect se ejecuta cuando se renderiza un componente, Aprendi mas sobre notacion de typescrit
 
@@ -39,6 +39,27 @@ se hizo cambios de estilos en la navbar, y en el componente de ingresar pedido.
 ### Fixed
 
 Modifique los test para que sean mas entendibles y reales, 
+
+### Removed
+
+Todavia nada
+
+
+### Sprint 3
+
+Seguí aprendiendo hooks useNavigate que es para navegar entre rutas, useState que es para actualizar estado de un componente y useEffect se ejecuta cuando se renderiza un componente, Estuve leyendo que una api-rest debe tener 4 verbos minimo: Get, Post, Path, Delete.
+
+### Added
+
+Se agregaron nuevas rutas, VerPedidos: para ver las ordenes pedidas del cliente.
+
+### Changed
+
+se hizo cambios en el CSS para responsive.
+
+### Fixed
+
+Restructure la navbar y el home que no eran responsive. 
 
 ### Removed
 

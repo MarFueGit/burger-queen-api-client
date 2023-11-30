@@ -21,8 +21,10 @@ export type OrderProduct = {
   product: Product;
 };
 export type Order = {
+  id?: number; // con el simbolo ?, le decimos a typescript que este atributo es opcional
   client: string;
   products: OrderProduct[];
   status: string;
   dataEntry: string;
+  dateProcessed: string;
 };

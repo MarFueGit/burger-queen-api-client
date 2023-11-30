@@ -4,7 +4,7 @@ import "./IngresarPedido.css";
 import ConfirmacionPedido from "./ConfirmacionPedido";
 import { getProducts } from "../services/products.service";
 import { Order, OrderProduct, Product } from "../types/types";
-import { getUniqueTiposMenu } from "../utils";
+import { dateNow, getUniqueTiposMenu } from "../utils";
 
 export default function IngresarPedido() {
   // Hook que abre y cierra el modal de confirmacion
@@ -19,9 +19,10 @@ export default function IngresarPedido() {
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [userOrder, setUserOrder] = useState<Order>({
     client: "",
-    dataEntry: `${new Date()}`,
+    dataEntry: dateNow(),
     products: [],
     status: "pending",
+    dateProcessed: ''
   });
 
   useEffect(() => {
@@ -95,6 +96,7 @@ export default function IngresarPedido() {
       dataEntry: "",
       products: [],
       status: "pending",
+      dateProcessed: ''
     });
   };
 

@@ -1,69 +1,75 @@
+/* Estilos de login*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem 0.5rem;
+}
 
-  /* Estilos de login*/
-  .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 1rem 0.5rem;
+.section-login {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: #0a9396;
+  border-radius: 7px;
+  position: relative;
+}
+
+.logo-burger {
+  width: 100%;
+  max-width: 100px;
+  position: absolute;
+  top: -60px;
+  bottom: 0;
+  right: 0;
+  left: 37%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+h1 {
+  font-size: 1.1rem;
+  margin-top: 50px;
+}
+input[type="email"],
+input[type="password"],
+.boton-sign {
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+label,
+.boton-sign {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.boton-sign:hover {
+  background-color: #ca6702;
+  transform: scale(1.1);
+}
+
+.need-account {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin-top: 20px;
+}
+
+/*Modo responsive */
+@media (max-width: 600px) {
+  .section-login h1 {
+    text-align: center;
   }
-  
-  .section-login {
-    width: 100%;
-    max-width: 420px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 1rem;
-    background-color: #0a9396;
-    border-radius: 7px;
-    position: relative;
-  }
-  
-  .logo-burger {
-    width: 100%;
-    max-width: 100px;
-    position: absolute;
-    top: -60px;
-    bottom: 0;
-    right: 0;
-    left: 37%;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-grow: 1;
-    padding-bottom: 1rem;
-  }
-  h1 {
-    font-size: 1.1rem;
-    margin-top: 50px;
-  }
-  input[type="email"],
-  input[type="password"],
-  .boton-sign {
-    font-family: "Nunito", sans-serif;
-    font-size: 22px;
-    padding: 0.25rem;
-    border-radius: 0.5rem;
-  }
-  label,
-  .boton-sign {
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  
-  .boton-sign:hover{
-    background-color: #ca6702;
-    transform: scale(1.1);
-  }
-  
-  .need-account {
-    display: inline-block;
-    font-size: 0.75rem;
-    margin-top: 20px;
-  }
+}

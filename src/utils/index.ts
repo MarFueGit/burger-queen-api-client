@@ -23,3 +23,20 @@ export const getUniqueTiposMenu = (products: Product[]): string[] => {
   // ya filtrados, usamos map para solo retornar la propiedad type
   return tiposMenuNoRepetidos.map((product: Product) => product.type);
 };
+
+export const dateNow = (): string => {
+  const fecha = new Date();
+
+  const dia = fecha.getDate().toString().padStart(2, "0");
+  const mes = (fecha.getMonth() + 1).toString().padStart(2, "0");
+  const anio = fecha.getFullYear().toString();
+
+  const hora = fecha.getHours().toString().padStart(2, "0");
+  const minutos = fecha.getMinutes().toString().padStart(2, "0");
+  const segundos = fecha.getSeconds().toString().padStart(2, "0");
+
+  const fechaFormateada = `${dia}-${mes}-${anio}`;
+  const horaFormateada = `${hora}:${minutos}:${segundos}`;
+
+  return `${fechaFormateada} ${horaFormateada}`;
+};

@@ -35,3 +35,25 @@ export const getOrders = (): Promise<Order[]> =>
       .then((response) => resolve(response))
       .catch((err) => reject(err));
   });
+
+export const updateOrder = (
+  id: number | undefined,
+  status: string,
+  dateProcessed: string
+): Promise<Order> =>
+  new Promise((resolve, reject) => {
+    const token = localStorage.getItem("token");
+    const options = {
+      method: "PATCH",
+      headers: {
+        accept: "application/json",
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ status, dateProcessed }),
+    };
+    fetch(`http://localhost:8080/orders/${id}`, options)
+      .then((response) => response.json())
+      .then((response) => resolve(response))
+      .catch((err) => reject(err));
+  });

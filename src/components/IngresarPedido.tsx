@@ -82,7 +82,7 @@ export default function IngresarPedido() {
     });
   };
 
-  //Agregamos el nombre del clinte de tipo strin y lo seteamos dentro de setUserOrder.
+  //Agregamos el nombre del clinte de tipo string y lo seteamos dentro de setUserOrder.
   const addNameClient = (name: string) => {
     setUserOrder({
       ...userOrder,
@@ -106,7 +106,7 @@ export default function IngresarPedido() {
       {/* Toast Exito  */}
       <section id="section-home">
         {/* Fin Toast Exito */}
-        <div className="button-izquierda">
+        <div className="section-izquierda">
           <div className="menu">
             {tiposDeMenu.map((tipoMenu: string, index: number) => (
               <button
@@ -137,9 +137,9 @@ export default function IngresarPedido() {
               </div>
             ))}
           </div>
-        </div>
-        <div className="item-derecha">
-          <table className="table">
+       </div>
+        <div className="section-derecha">
+          <table className="table ">
             <thead>
               <tr>
                 <th>Item</th>
@@ -176,7 +176,7 @@ export default function IngresarPedido() {
               <tr>
                 <td>
                   <button
-                    className="button-table"
+                    id="buttonEnviarCocina"
                     onClick={() => {
                       setConfirm(true);
                     }}
@@ -187,7 +187,8 @@ export default function IngresarPedido() {
               </tr>
             </tbody>
           </table>
-        </div>
+          </div>
+       
       </section>
       <ConfirmacionPedido
         resetOrder={resetOrder}

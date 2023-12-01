@@ -13,7 +13,11 @@ export default function VerPedidos() {
     getOrders()
       .then((orders: Order[]) => {
         console.log("dame las ordenes:", orders);
-        setOrders(orders);
+        const pendingOrders = orders.filter(
+          (order: Order) => order.status === "pending"
+        );
+        console.log("ordenes pendientes:", pendingOrders);
+        setOrders(pendingOrders);
       })
       .catch((error) => console.log("ERROR: ", error));
   }, [loading]);
@@ -44,7 +48,7 @@ export default function VerPedidos() {
           <tbody>
             {orders.map((order: Order, index: number) => (
               <tr key={`${order.dataEntry}-${index}`}>
-                <td data-label="Num. de orden">{index}</td>
+                <td data-label="Num. de orden">{order.id}</td>
                 <td data-label="Cliente">
                   {order.client === "" ? "Invitado" : order.client}
                 </td>
@@ -58,11 +62,11 @@ export default function VerPedidos() {
                   </ul>
                 </td>
                 <td data-label="Fecha">{order.dataEntry}</td>
-                <td data-label="Total">{order.status}</td>
+                <td data-label="Status">{order.status}</td>
                 <td data-label="Acción">
                   <button
                     onClick={() => updateOrderById(order.id, "done")}
-                    disabled={loading}
+                    disabled={loading || order.status !== "pending"}
                   >
                     {loading ? "Actualizando" : "Marcar como terminado"}
                   </button>

@@ -3,6 +3,7 @@
   max-width: 1200px;
   margin: auto;
   padding-top: 10%;
+ 
 }
 
 .table {
@@ -12,6 +13,7 @@
   margin: 0;
   padding: 0;
   table-layout: fixed;
+  
 }
 
 .table caption {
@@ -35,8 +37,11 @@
 .table button {
   cursor: pointer;
   background-color: #ee9b00;
-  width: 120px;
+  width: 100%;
+  max-width: 130px;
+  padding: 7px;
   height: auto;
+  font-size: 1em;
 }
 
 .table thead th {

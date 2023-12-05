@@ -4,6 +4,8 @@ import Login from "./components/Login";
 import Home from "./components/Home";
 import IngresarPedido from "./components/IngresarPedido";
 import VerPedidos from "./components/VerPedidos";
+import PedidosListos from "./components/PedidosListos";
+import HistorialPedidos from "./components/HistorialPedidos";
 
 // Creamos nuestro router de rutas
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "/ver-pedidos",
     element: <VerPedidos />
+  },
+  {
+    path: "/pedidos-listos",
+    element: <PedidosListos />
+  },
+  {
+    path: "/historial-pedidos",
+    element: <HistorialPedidos />
   }
 ]);
 

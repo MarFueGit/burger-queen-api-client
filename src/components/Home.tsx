@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
       <section className="section-welcome">
         <h1>
-          BIENVENIDO <i className="fa-solid fa-mug-hot"></i>
+          BIENVENIDO<i className="fa-solid fa-mug-hot"></i>
         </h1>
       </section>
     </>

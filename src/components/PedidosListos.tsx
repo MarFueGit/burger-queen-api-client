@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import "./VerPedidos.css";
+import "./PedidosListos.css";
 import { Order, OrderProduct } from "../types/types";
 import { getOrders, updateOrder } from "../services/orders.service";
 import { dateNow } from "../utils";
 
-export default function VerPedidos() {
+export default function PedidosListos() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -14,7 +14,7 @@ export default function VerPedidos() {
       .then((orders: Order[]) => {
         console.log("dame las ordenes:", orders);
         const pendingOrders = orders.filter(
-          (order: Order) => order.status === "pending"
+          (order: Order) => order.status === "done"
         );
         console.log("ordenes pendientes:", pendingOrders);
         setOrders(pendingOrders);
@@ -34,13 +34,13 @@ export default function VerPedidos() {
       <Navbar />
       <section className="container-table">
         <table className="table">
-          <caption>Ultimas Ordenes</caption>
+          <caption>Ordenes listas para entregar</caption>
           <thead>
             <tr>
               <th>Num. de orden</th>
               <th>Cliente</th>
               <th>Producto</th>
-              <th>Fecha creado</th>
+              <th>Fecha Terminado</th>
               <th>Estatus</th>
               <th>Acción</th>
             </tr>
@@ -61,14 +61,14 @@ export default function VerPedidos() {
                     ))}
                   </ul>
                 </td>
-                <td data-label="Fecha">{order.dataEntry}</td>
+                <td data-label="Fecha">{order.dateProcessed}</td>
                 <td data-label="Status">{order.status}</td>
                 <td data-label="Acción">
                   <button
-                    onClick={() => updateOrderById(order.id, "done")}
-                    disabled={loading || order.status !== "pending"}
+                    onClick={() => updateOrderById(order.id, "delivered")}
+                    disabled={loading || order.status !== "done"}
                   >
-                    {loading ? "Actualizando" : "Marcar como terminado"}
+                    {loading ? "Actualizando" : "Marcar como entregada"}
                   </button>
                 </td>
               </tr>

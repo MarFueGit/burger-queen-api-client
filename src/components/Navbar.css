@@ -8,31 +8,33 @@
 
 .enlace {
   position: absolute;
-  padding: 20px 50px;
+  padding: 20px 10px;
   bottom: -14px;
+ 
 }
 .logo-nav {
   height: 40px;
 }
 .navbar-menu ul {
   float: right;
-  margin-right: 20px;
+ 
 }
 .navbar-menu ul li {
   display: inline-block;
   line-height: 55px;
-  margin: 0 10px;
+  margin: 0 5px;
 }
 .navbar-menu ul li a {
   color: white;
   font-size: 14px;
   text-transform: uppercase;
-  padding: 7px 13px;
   border-radius: 5px;
+  padding: 5px;
 }
 li a:hover {
   background-color: #1b9bff;
   transition: 0.5s;
+
 }
 .checkbtn {
   font-size: 30px;
@@ -57,7 +59,6 @@ li a:hover {
   }
   .navbar-menu .fa-bars {
     position: absolute;
-    right: 40px;
    bottom: 27%;
   }
   .navbar-menu ul {
@@ -69,16 +70,18 @@ li a:hover {
     left: -100%;
     text-align: center;
     transition: all 0.5s;
+    
   }
   .navbar-menu ul li {
     display: block;
-    margin: 50px 0;
+    margin: 40px 0;
     line-height: 30px;
   }
   .navbar-menu ul li a {
-    font-size: 16px;
+    font-size: 14px;
+    
   }
-
+ 
   li a:hover,
   li a.active {
     background: none;

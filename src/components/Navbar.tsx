@@ -12,7 +12,7 @@ export default function Navbar() {
         <i className="fa-solid fa-bars"></i>
       </label>
       <a className="enlace" onClick={() => navigate("/")}>
-        <img src={logoBurger} className="logo-nav" alt="" />
+        <img src={logoBurger} className="logo-nav" alt="logoBurger" />
       </a>
       <ul>
         <li>
@@ -24,7 +24,10 @@ export default function Navbar() {
           <a onClick={() => navigate("/ver-pedidos")}>ver pedidos</a>
         </li>
         <li>
-          <a>pedidos listos</a>
+          <a onClick={() => navigate("/pedidos-listos")}>pedidos listos</a>
+        </li>
+        <li>
+          <a onClick={() => navigate("/historial-pedidos")}>Historial de pedidos</a>
         </li>
         <li>
           <a

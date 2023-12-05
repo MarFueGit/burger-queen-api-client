@@ -1,4 +1,4 @@
-import { login } from "../../../src/services/auth.service";
+import { login } from "../../src/services/auth.service";
 
 // Mockea el fetch
 global.fetch = jest

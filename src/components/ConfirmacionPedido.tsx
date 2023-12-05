@@ -76,7 +76,7 @@ export default function ConfirmacionPedido({
                 onChange={(e) => addNameClient(e.target.value)}
               />
               <button className="close-modal" onClick={() => setOpen(false)}>
-                <i className="fa-solid fa-x"></i>
+                <i className="fa-solid fa-x" data-testid={"closeModal"}></i>
               </button>
               <div className="buttons-modal">
                 <button

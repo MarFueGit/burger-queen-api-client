@@ -22,7 +22,7 @@ export default function IngresarPedido() {
     dataEntry: dateNow(),
     products: [],
     status: "pending",
-    dateProcessed: ''
+    dateProcessed: "",
   });
 
   useEffect(() => {
@@ -96,7 +96,7 @@ export default function IngresarPedido() {
       dataEntry: "",
       products: [],
       status: "pending",
-      dateProcessed: ''
+      dateProcessed: "",
     });
   };
 
@@ -108,7 +108,7 @@ export default function IngresarPedido() {
         {/* Fin Toast Exito */}
         <div className="section-izquierda">
           <div className="menu">
-            {tiposDeMenu.map((tipoMenu: string, index: number) => (
+            {tiposDeMenu?.map((tipoMenu: string, index: number) => (
               <button
                 className={
                   tipoMenu === menuSelected ? "tipo-menu-active" : "button-menu"
@@ -121,7 +121,7 @@ export default function IngresarPedido() {
             ))}
           </div>
           <div className="list-menu">
-            {products.map((product: Product, index: number) => (
+            {products?.map((product: Product, index: number) => (
               <div className="breackfa" key={index}>
                 <img src={product.image} alt={product.name} />
                 <p>
@@ -137,7 +137,7 @@ export default function IngresarPedido() {
               </div>
             ))}
           </div>
-       </div>
+        </div>
         <div className="section-derecha">
           <table className="table ">
             <thead>
@@ -159,6 +159,7 @@ export default function IngresarPedido() {
                       className="fa-solid fa-trash"
                       onClick={() => removeProduct(order.product)}
                       key={index}
+                      data-testid={"trash-icon"}
                     ></i>
                   </td>
                 </tr>
@@ -166,11 +167,10 @@ export default function IngresarPedido() {
               <tr>
                 <td>Total</td>
                 <td>
-                  $
-                  {userOrder.products.reduce(
+                  {`$ ${userOrder.products.reduce(
                     (a, b: OrderProduct) => a + b.product.price * b.qty,
                     0
-                  )}
+                  )}`}
                 </td>
               </tr>
               <tr>
@@ -187,8 +187,7 @@ export default function IngresarPedido() {
               </tr>
             </tbody>
           </table>
-          </div>
-       
+        </div>
       </section>
       <ConfirmacionPedido
         resetOrder={resetOrder}

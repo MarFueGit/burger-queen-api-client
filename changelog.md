@@ -64,3 +64,24 @@ Restructure la navbar y el home que no eran responsive.
 ### Removed
 
 Todavia nada
+
+
+### Sprint 4
+
+Me dedique a ser test y correcciones de responsive.
+
+### Added
+
+Se agregaron los test faltantes
+
+### Changed
+
+se hizo cambios en el CSS para responsive.
+
+### Fixed
+
+Agregue mas estilos responsive de todas las vistas 
+
+### Removed
+
+Removi codigo que no usaba en el css.

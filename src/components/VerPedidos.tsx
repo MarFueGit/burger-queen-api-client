@@ -19,7 +19,9 @@ export default function VerPedidos() {
         console.log("ordenes pendientes:", pendingOrders);
         setOrders(pendingOrders);
       })
-      .catch((error) => console.log("ERROR: ", error));
+      .catch((error) => {
+        console.log("ERROR: ", error);
+      });
   }, [loading]);
 
   const updateOrderById = async (id: number | undefined, status: string) => {

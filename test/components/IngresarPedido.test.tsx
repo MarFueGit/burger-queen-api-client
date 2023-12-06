@@ -118,7 +118,7 @@ describe("IngresarPedido component", () => {
     expect(getByText(/Éxito/)).not.toBeNull();
     // Cerramos modal
     fireEvent.click(getByTestId("buttonToast"));
-    //Vericiamos que reseteo la orden
+    //Verificamos que reseteo la orden
     expect(getByText(/\$ 0/)).not.toBeNull();
   });
 

@@ -33,7 +33,11 @@ export default function ConfirmacionPedido({
     <section className="section-modal">
       {open && (
         <div className="modal">
-          <div onClick={() => setOpen(false)} className="overlay"></div>
+          <div
+            onClick={() => setOpen(false)}
+            className="overlay"
+            data-testid="closeModalDiv"
+          ></div>
           {success || error ? (
             <div className="container-toast">
               <div
@@ -87,6 +91,7 @@ export default function ConfirmacionPedido({
                       console.log("respuesta de la api:", response);
                       setSuccess(true);
                     } catch (error) {
+                      setSuccess(false);
                       setError(true);
                       setErrorMessage(String(error));
                       console.log("ERROR: ", error);
@@ -95,7 +100,11 @@ export default function ConfirmacionPedido({
                 >
                   Confirmar
                 </button>
-                <button className="cancelar" onClick={() => setOpen(false)}>
+                <button
+                  className="cancelar"
+                  onClick={() => setOpen(false)}
+                  data-testid="cancelarEnviar"
+                >
                   Cancelar
                 </button>
               </div>

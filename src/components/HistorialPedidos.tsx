@@ -13,6 +13,7 @@ export default function HistorialPedidos() {
       .then((orders: Order[]) => {
         console.log("dame las ordenes:", orders);
         setOrders(orders);
+        setLoading(false);
       })
       .catch((error) => console.log("ERROR: ", error));
   }, [loading]);

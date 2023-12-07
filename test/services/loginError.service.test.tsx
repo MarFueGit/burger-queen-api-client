@@ -3,7 +3,7 @@ import { login } from "../../src/services/auth.service";
 // Mockea el fetch
 global.fetch = jest
   .fn()
-  .mockImplementation(() => Promise.reject(new Error("Error")));
+  .mockImplementation(() => Promise.reject(new Error("Error al ingresar")));
 
 describe("auth.service.ts", () => {
   it("login retorna error ", async () => {
@@ -19,7 +19,7 @@ describe("auth.service.ts", () => {
       await login(email, password);
     } catch (error) {
       // Verificar: Entonces como el fetch nos devuelve error, verificamos que no sea indefinido
-      expect(error).not.toBeUndefined();
+      expect(error.message).toBe("Error al ingresar");
     }
   });
 });

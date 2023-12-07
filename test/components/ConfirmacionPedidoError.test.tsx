@@ -10,6 +10,19 @@ jest.mock("../../src/services/orders.service", () => ({
   },
 }));
 
+let consoleLogSpy: jest.SpyInstance;
+let consoleErrorSpy: jest.SpyInstance;
+
+beforeEach(() => {
+  consoleLogSpy = jest.spyOn(console, "log").mockImplementation(() => {});
+  consoleErrorSpy = jest.spyOn(console, "error").mockImplementation(() => {});
+});
+
+afterEach(() => {
+  consoleLogSpy.mockRestore();
+  consoleErrorSpy.mockRestore();
+});
+
 describe("ConfirmacionPedidoError", () => {
   //1. Prepare
   const open: boolean = true;

@@ -7,8 +7,8 @@ import { getOrders } from "../../src/services/orders.service";
 // Mock the products.service module
 jest.mock("../../src/services/orders.service", () => ({
   getOrders: jest.fn(),
-  
 }));
+
 describe("HistorialPedidos components", () => {
   let consoleLogSpy: jest.SpyInstance;
   let consoleErrorSpy: jest.SpyInstance;

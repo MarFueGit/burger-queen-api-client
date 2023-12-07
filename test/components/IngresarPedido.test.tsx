@@ -57,6 +57,7 @@ describe("IngresarPedido component", () => {
     //1. Preparar
 
     (getProducts as jest.Mock).mockResolvedValue(mockProducts);
+    // Extraemos estas funciones de render
     const {
       getByText,
       getAllByText,

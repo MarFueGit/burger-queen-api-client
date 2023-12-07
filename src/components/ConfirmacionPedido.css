@@ -63,7 +63,6 @@ body.active-modal {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  
 }
 .confirmar {
   background-color: #ee9b00;
@@ -92,5 +91,8 @@ body.active-modal {
   .modal-content input {
     width: 100%;
     margin: 0 auto;
+  }
+  .container-toast {
+    background-color: #ee9b00;
   }
 }

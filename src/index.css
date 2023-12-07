@@ -62,7 +62,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .toast {
     width: 100%;margin: auto;
   }
@@ -70,4 +70,9 @@
     font-size: 0.7em;
     
   }
+  .success{
+    width: 70%;
+   margin-left: -15%; 
+  }
 }
+

@@ -22,7 +22,7 @@ export default function VerPedidos() {
       .catch((error) => {
         console.log("ERROR: ", error);
       });
-  }, [loading]);
+  }, [loading]); // cada vez que actualicemos una orden, traemos de nuevo las ordenes
 
   const updateOrderById = async (id: number | undefined, status: string) => {
     setLoading(true);

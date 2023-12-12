@@ -22,7 +22,7 @@
   font-size: 0.8em;
 }
 .section-derecha {
-  width: 49%;
+  width: 50%;
   height: 100vh;
 }
 
@@ -72,13 +72,17 @@
 
 /* estilos de la table */
 .fa-trash {
-  color: #ca6702;
-  cursor: pointer;
   font-size: 20px;
+}
+.fa-minus{
+  margin-right: 10px;
+}
+.fa-plus{
+  margin-left: 10px;
 }
 
 /* Modo responsive*/
-@media screen and (max-width: 758px) {
+@media screen and (max-width: 750px) {
   #section-home {
     width: 100%;
     text-align: center;
@@ -115,4 +119,7 @@
     grid-template-columns: repeat(2, 80%);
     place-content: center;
   }
+ .fa-minus{
+ 
+ }
 }

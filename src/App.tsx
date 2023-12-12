@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Login from "./components/Login";
-import Home from "./components/Home";
-import IngresarPedido from "./components/IngresarPedido";
+import Home from "./pages/Home/Home";
+import IngresarPedido from "./pages/IngresarPedido/IngresarPedido";
 import VerPedidos from "./components/VerPedidos";
 import PedidosListos from "./components/PedidosListos";
 import HistorialPedidos from "./components/HistorialPedidos";
@@ -19,20 +19,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/ingresar-pedido",
-    element: <IngresarPedido />
+    element: <IngresarPedido />,
   },
   {
     path: "/ver-pedidos",
-    element: <VerPedidos />
+    element: <VerPedidos />,
   },
   {
     path: "/pedidos-listos",
-    element: <PedidosListos />
+    element: <PedidosListos />,
   },
   {
     path: "/historial-pedidos",
-    element: <HistorialPedidos />
-  }
+    element: <HistorialPedidos />,
+  },
 ]);
 
 // Renderizamos el router

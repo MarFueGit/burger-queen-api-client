@@ -33,3 +33,7 @@ input{
 ul{
   list-style: none;
 }
+i{
+  cursor: pointer;
+  color: #ca6702;
+}

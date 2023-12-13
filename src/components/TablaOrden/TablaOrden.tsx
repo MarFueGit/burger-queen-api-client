@@ -5,13 +5,54 @@ interface TablaOrdenProps {
   userOrder: Order;
   removeProduct: (product: Product) => void;
   setConfirm: Dispatch<SetStateAction<boolean>>;
+  setUserOrder: Dispatch<SetStateAction<Order>>;
 }
 
 export default function TablaOrden({
   userOrder,
   removeProduct,
   setConfirm,
+  setUserOrder,
 }: TablaOrdenProps) {
+  //Funcion para agregar productos a la orden del usuario
+  const addProduct = (product: Product): void => {
+    const arrayProducts: OrderProduct[] = userOrder.products;
+    const indexExist: OrderProduct | number = arrayProducts.findIndex(
+      (order: OrderProduct) => order.product.id === product.id
+    );
+    if (indexExist > -1) {
+      arrayProducts[indexExist] = {
+        product: arrayProducts[indexExist].product,
+        qty: arrayProducts[indexExist].qty + 1,
+      };
+    }
+    setUserOrder({
+      ...userOrder,
+      products: arrayProducts,
+    });
+  };
+
+  //Funcion para restar producto a la orden del usuario
+  const minusProduct = (product: Product): void => {
+    const arrayProducts: OrderProduct[] = userOrder.products;
+    const indexExist: OrderProduct | number = arrayProducts.findIndex(
+      (order: OrderProduct) => order.product.id === product.id
+    );
+    if (indexExist > -1 && arrayProducts[indexExist].qty > 1) {
+      arrayProducts[indexExist] = {
+        product: arrayProducts[indexExist].product,
+        qty: arrayProducts[indexExist].qty - 1,
+      };
+    } else {
+      // La funcion splice borra un elemento en la posicion especifica
+      arrayProducts.splice(indexExist, 1);
+    }
+    setUserOrder({
+      ...userOrder,
+      products: arrayProducts,
+    });
+  };
+
   return (
     <div className="section-derecha">
       <table className="table ">
@@ -31,16 +72,16 @@ export default function TablaOrden({
               <td data-label="Cantidad">
                 <i
                   className="fa-solid fa-minus"
-                  onClick={() => {}}
+                  onClick={() => minusProduct(order.product)}
                   key={index}
-                  data-testid={"trash-icon"}
+                  data-testid={"minus-icon"}
                 ></i>
                 {order.qty}
                 <i
                   className="fa-solid fa-plus"
-                  onClick={() => {}}
+                  onClick={() => addProduct(order.product)}
                   key={index}
-                  data-testid={"trash-icon"}
+                  data-testid={"plus-icon"}
                 ></i>
               </td>
               <td data-label="Acción">

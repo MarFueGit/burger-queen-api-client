@@ -40,7 +40,7 @@ export default function IngresarPedido() {
   }, []);
 
   //Funcion para eliminar productos
-  const removeProduct = (product: Product): void => {
+  const removeAllProducts = (product: Product): void => {
     const arrayProducts: OrderProduct[] = userOrder.products.filter(
       (order: OrderProduct) => order.product.id !== product.id
     );
@@ -93,9 +93,10 @@ export default function IngresarPedido() {
           filterProducts={filterProducts}
         />
         <TablaOrden
-          removeProduct={removeProduct}
+          removeProduct={removeAllProducts}
           setConfirm={setConfirm}
           userOrder={userOrder}
+          setUserOrder={setUserOrder}
         />
       </section>
       <ConfirmacionPedido

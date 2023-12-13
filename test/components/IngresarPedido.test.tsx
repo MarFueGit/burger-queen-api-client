@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
-import IngresarPedido from "../../src/components/IngresarPedido";
+import IngresarPedido from "../../src/pages/IngresarPedido/IngresarPedido";
 import { getProducts } from "../../src/services/products.service";
 import { BrowserRouter } from "react-router-dom";
 import { sendOrder } from "../../src/services/orders.service";
@@ -84,16 +84,33 @@ describe("IngresarPedido component", () => {
     // Agregamos Helado de fresa al pedido
     fireEvent.click(getAllByText(/Agregar/)[0]);
 
+    // Agremaos un nuevo helado de fresa con el boton +
+    fireEvent.click(getAllByTestId("plus-icon")[0]);
+
     // Verificamos que se haya sumado el total de 40
-    expect(getByText(/\$ 40/)).not.toBeNull();
+    expect(getByText(/\$ 80/)).not.toBeNull();
 
     // Agregamos otro helado de fresa, para incrementar 2 helados
     fireEvent.click(getAllByText(/Agregar/)[0]);
     // Verificamos que se haya sumado el total de 80
-    expect(getByText(/\$ 80/)).not.toBeNull();
+    expect(getByText(/\$ 120/)).not.toBeNull();
 
-    // Eliminamos un helado de fresa
+    // Borramos un solo helado de fresa con el boton -
+    fireEvent.click(getAllByTestId("minus-icon")[0]);
+
+    // Eliminamos todos los helados de fresa
     fireEvent.click(getAllByTestId("trash-icon")[0]);
+    // Verificamos que se haya borrado y sea 0
+    expect(getByText(/\$ 0/)).not.toBeNull();
+
+    // Agregamos un hamburgesa y enviamos a ocicna
+    fireEvent.click(getAllByText(/Agregar/)[1]);
+    // Agregamos un hamburgesa y enviamos a ocicna
+    fireEvent.click(getAllByText(/Agregar/)[1]);
+
+    //borramos las dos hamburguesas dando dos click al -
+    fireEvent.click(getAllByTestId("minus-icon")[0]);
+    fireEvent.click(getAllByTestId("minus-icon")[0]);
     // Verificamos que se haya borrado y sea 0
     expect(getByText(/\$ 0/)).not.toBeNull();
 

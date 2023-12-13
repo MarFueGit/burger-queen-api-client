@@ -85,3 +85,24 @@ Agregue mas estilos responsive de todas las vistas
 ### Removed
 
 Removi codigo que no usaba en el css.
+
+
+### Sprint 5
+
+Refactorize mi componente ingresar pedidos separandolo por componentes, para mejorar mi proyecto a peticion del bootcamp Feedback.
+
+### Added
+
+Se agrego la carpeta Pages y se agrego los test de los nuevos componentes.
+
+### Changed
+
+se hizo cambios en el componente ingresarPedidos y tambien en sus test.
+
+### Fixed
+
+Agregue estilos a los iconos de sumar y restar.
+
+### Removed
+
+No se removio nada.

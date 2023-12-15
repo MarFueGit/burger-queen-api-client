@@ -4,53 +4,83 @@
   width: 100%;
   position: fixed;
   z-index: 1;
+  padding: 0 6px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
-
 .enlace {
   position: absolute;
+  left: 20px;
   padding: 20px 10px;
   bottom: -14px;
- 
 }
 .logo-nav {
   height: 40px;
 }
-.navbar-menu ul {
-  float: right;
+/* .navbar-menu ul {
+  position: relative;
+} */
+/* .navbar-menu ul li {
+  position: relative;
+  list-style: none;
+  float: left;
+} */
+.navbar-menu ul li a {
+  color: #fff;
+  padding: 20px 25px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+/* .navbar-menu ul li a:hover {
+  background-color: #1b9bff;
+  transition: 0.5s;
+} */
+.navbar-menu ul li ul {
+  position: absolute;
+  left: 0;
+  top: 77px;
+  width: 200px;
+  background: #005f73;
+  display: none;
+}
+.navbar-menu ul li:hover ul {
+  display: block;
+}
+.navbar-menu ul li ul li {
+  position: relative;
+  width: 100%;
  
+}
+
+.navbar-menu ul {
+  position: relative;
 }
 .navbar-menu ul li {
   display: inline-block;
   line-height: 55px;
   margin: 0 5px;
 }
-.navbar-menu ul li a {
+/* .navbar-menu ul li a {
   color: white;
   font-size: 14px;
   text-transform: uppercase;
   border-radius: 5px;
   padding: 5px;
-}
-li a:hover {
-  background-color: #1b9bff;
-  transition: 0.5s;
-
-}
+} */
 .checkbtn {
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
   cursor: pointer;
   display: none;
 }
 #check {
   display: none;
 }
+
 .fa-right-from-bracket {
   font-size: 20px;
   padding-left: 5px;
+  line-height: 50px;
   color: #ee9b00;
 }
 @media (max-width: 600px) {
@@ -59,7 +89,9 @@ li a:hover {
   }
   .navbar-menu .fa-bars {
     position: absolute;
-   bottom: 27%;
+    font-size: 30px;
+    bottom: 27%;
+    right: 30px;
   }
   .navbar-menu ul {
     position: fixed;
@@ -70,7 +102,6 @@ li a:hover {
     left: -100%;
     text-align: center;
     transition: all 0.5s;
-    
   }
   .navbar-menu ul li {
     display: block;
@@ -79,9 +110,8 @@ li a:hover {
   }
   .navbar-menu ul li a {
     font-size: 14px;
-    
   }
- 
+
   li a:hover,
   li a.active {
     background: none;

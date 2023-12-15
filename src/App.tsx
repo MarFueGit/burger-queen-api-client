@@ -6,6 +6,7 @@ import IngresarPedido from "./pages/IngresarPedido/IngresarPedido";
 import VerPedidos from "./components/VerPedidos";
 import PedidosListos from "./components/PedidosListos";
 import HistorialPedidos from "./components/HistorialPedidos";
+import ListadoTrabajadores from "./pages/Trabajadores/ListadoTrabajadores";
 
 // Creamos nuestro router de rutas
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "/historial-pedidos",
     element: <HistorialPedidos />,
+  },
+  {
+    path: "/listado-trabajadores",
+    element: <ListadoTrabajadores />,
   },
 ]);
 

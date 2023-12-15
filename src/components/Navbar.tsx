@@ -16,19 +16,35 @@ export default function Navbar() {
       </a>
       <ul>
         <li>
-          <a className="active" onClick={() => navigate("/ingresar-pedido")}>
-            Ingresar pedido
+          <a className="active">
+            Pedidos <b>▼</b>
           </a>
+          <ul>
+            <li>
+              <a onClick={() => navigate("/ingresar-pedido")}>
+                Ingresar Pedido
+              </a>
+            </li>
+            <li>
+              <a onClick={() => navigate("/ver-pedidos")}>Ver Pedidos</a>
+            </li>
+            <li>
+              <a onClick={() => navigate("/pedidos-listos")}>Pedidos Listos</a>
+            </li>
+            <li>
+              <a onClick={() => navigate("/historial-pedidos")}>Historial de pedidos</a>
+            </li>
+          </ul>
         </li>
         <li>
-          <a onClick={() => navigate("/ver-pedidos")}>ver pedidos</a>
+          <a onClick={() => navigate("/listado-trabajadores")}>Trabajadores</a>
         </li>
         <li>
-          <a onClick={() => navigate("/pedidos-listos")}>pedidos listos</a>
+          <a>Productos</a>
         </li>
-        <li>
+        {/* <li>
           <a onClick={() => navigate("/historial-pedidos")}>Historial de pedidos</a>
-        </li>
+        </li> */}
         <li>
           <a
             onClick={(e) => {

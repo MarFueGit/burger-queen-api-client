@@ -1,11 +1,14 @@
-/*  estilos del home*/
+body{
+  background-color: #E9D8A6;
+}
+
 #section-home {
   display: flex;
   padding-top: 10%;
   height: 100vh;
 }
 .section-izquierda {
-  height: 100vh;
+  height: auto;
   width: 50%;
 }
 .menu {
@@ -17,14 +20,16 @@
   width: 100%;
   max-width: 120px;
   padding: 10px;
-  border: 1px solid #ee9b00;
+  border: 1px solid #ca6702;
   font-weight: bold;
   font-size: 0.8em;
 }
 .section-derecha {
-  width: 50%;
-  height: 100vh;
+  width: 49%;
+  height: auto;
+ 
 }
+
 
 .list-menu {
   display: grid;
@@ -40,7 +45,7 @@
   padding-bottom: 10px;
 }
 .breackfa {
-  border: 1px solid #ee9b00;
+  border: 1px solid #ca6702;
   border-radius: 8px;
 }
 .list-menu img {
@@ -75,10 +80,15 @@
   font-size: 20px;
 }
 .fa-minus{
-  margin-right: 10px;
+  margin-right: 7px;
+  border: 1px solid;
+  padding: 5px;
+  
 }
 .fa-plus{
-  margin-left: 10px;
+  margin-left: 7px;
+  border: 1px solid;
+  padding: 5px;
 }
 
 /* Modo responsive*/
@@ -119,7 +129,6 @@
     grid-template-columns: repeat(2, 80%);
     place-content: center;
   }
- .fa-minus{
+
  
- }
 }

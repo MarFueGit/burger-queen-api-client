@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { Order, OrderProduct, Product } from "../../types/types";
 
 interface TablaOrdenProps {
@@ -69,7 +69,7 @@ export default function TablaOrden({
             <tr key={index}>
               <td data-label="Item">{order.product.name}</td>
               <td data-label="Precio">${order.product.price}</td>
-              <td data-label="Cantidad">
+              <td data-label="Cantidad" className="cantidad">
                 <i
                   className="fa-solid fa-minus"
                   onClick={() => minusProduct(order.product)}

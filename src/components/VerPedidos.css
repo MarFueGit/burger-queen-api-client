@@ -24,8 +24,8 @@
 }
 
 .table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+  background-color: #E9D8A6;
+  border: 1px solid #E9D8A6;
 }
 
 .table th,
@@ -73,7 +73,7 @@
   }
   .table tr {
     margin-bottom: 8px;
-    border-bottom: 4px solid #ddd;
+    border-bottom: 4px solid #ee9b00;
     display: block;
   }
   .table th,
@@ -82,7 +82,7 @@
   }
   .table td {
     display: block;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ee9b00;
     text-align: right;
   }
   .table td:last-child {

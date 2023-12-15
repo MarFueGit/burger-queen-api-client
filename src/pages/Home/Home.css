@@ -5,12 +5,18 @@
   padding-top: 100px;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url(../../assets/desenfocada2.png);
+  background-size: cover;
 }
 
 .section-welcome h1 {
   font-size: 2em;
-  letter-spacing: 5px;
-  color: #005f73;
+  letter-spacing: 10px;
+  color: white;
+}
+.fa-mug-hot{
+  color: white;
+
 }
 
 /* Modo responsive*/

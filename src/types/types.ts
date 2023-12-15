@@ -28,3 +28,9 @@ export type Order = {
   dataEntry: string;
   dateProcessed: string;
 };
+export type User = {
+  email: string;
+  password: string;
+  role: string;
+  id: number;
+}

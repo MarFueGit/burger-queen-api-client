@@ -5,7 +5,9 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1rem 0.5rem;
+  width: 100%;
+  background-image: url(../assets/desenfocada2.png);
+  background-size: cover;
 }
 
 .section-login {
@@ -16,7 +18,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: 1rem;
-  background-color: #0a9396;
+  background-color: #ee9b00;
   border-radius: 7px;
   position: relative;
 }
@@ -57,7 +59,7 @@ label,
 }
 
 .boton-sign:hover {
-  background-color: #ca6702;
+background-color: #BB3E03;
   transform: scale(1.1);
 }
 

@@ -31,7 +31,8 @@ export default function HistorialPedidos() {
               <th>Producto</th>
               <th>Fecha creado</th>
               <th>Fecha terminado</th>
-              <th>Estatus</th>
+              <th>Estado</th>
+              <th>Detalle Orden</th>
             </tr>
           </thead>
           <tbody>
@@ -52,7 +53,8 @@ export default function HistorialPedidos() {
                 </td>
                 <td data-label="Fecha">{order.dataEntry}</td>
                 <td data-label="Fecha">{order.dateProcessed}</td>
-                <td data-label="Status">{order.status}</td>
+                <td data-label="Estado">{order.status}</td>
+                <td data-label="Detalle orden"></td>
               </tr>
             ))}
           </tbody>

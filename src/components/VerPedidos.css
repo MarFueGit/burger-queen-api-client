@@ -17,7 +17,7 @@
 }
 
 .table caption {
-  font-size: 28px;
+  font-size: 25px;
   text-transform: uppercase;
   font-weight: bold;
   margin: 8px 0px;
@@ -34,6 +34,7 @@
   padding: 8px;
   text-align: center;
 }
+
 .table button {
   cursor: pointer;
   background-color: #ee9b00;
@@ -45,7 +46,7 @@
 }
 
 .table thead th {
-  text-transform: uppercase;
+ 
   background-color: #005f73;
   color: #dddddd;
 }

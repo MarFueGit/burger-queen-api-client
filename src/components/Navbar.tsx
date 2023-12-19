@@ -17,7 +17,7 @@ export default function Navbar() {
       <ul>
         <li>
           <a className="active">
-            Pedidos <b>▼</b>
+            Pedidos<b>▼</b>
           </a>
           <ul>
             <li>

@@ -72,6 +72,7 @@ export default function Login() {
               if (response.accessToken) {
                 // Si la respuesta es correcta me manda a home
                 localStorage.setItem("token", response.accessToken);
+                localStorage.setItem("user", JSON.stringify(response.user));
                 navigate("/");
               } else {
                 //Si no es correcta mostramos el mensaje de error

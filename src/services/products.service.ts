@@ -12,7 +12,7 @@ export const getProducts = (): Promise<Product[]> =>
         Authorization: `Bearer ${token}`,
       },
     };
-    fetch(`https://burger-queen-api-mock-mary.vercel.app/products`, options)
+    fetch(`https://mary-burger-queen-api-mock.onrender.com/products`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));

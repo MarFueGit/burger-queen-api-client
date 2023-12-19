@@ -58,7 +58,7 @@ export default function TablaOrden({
       <table className="table ">
         <thead>
           <tr>
-            <th>Item</th>
+            <th>Articulo</th>
             <th>Precio</th>
             <th>Cantidad</th>
             <th>Acción</th>
@@ -67,12 +67,13 @@ export default function TablaOrden({
         <tbody>
           {userOrder.products.map((order: OrderProduct, index: number) => (
             <tr key={index}>
-              <td data-label="Item">{order.product.name}</td>
+              <td data-label="Articulo">{order.product.name}</td>
               <td data-label="Precio">${order.product.price}</td>
               <td data-label="Cantidad" className="cantidad">
                 <i
                   className="fa-solid fa-minus"
                   onClick={() => minusProduct(order.product)}
+                  onKeyUp={() => {}}
                   key={index}
                   data-testid={"minus-icon"}
                 ></i>
@@ -80,6 +81,7 @@ export default function TablaOrden({
                 <i
                   className="fa-solid fa-plus"
                   onClick={() => addProduct(order.product)}
+                  onKeyUp={() => {}}
                   key={index}
                   data-testid={"plus-icon"}
                 ></i>
@@ -88,6 +90,7 @@ export default function TablaOrden({
                 <i
                   className="fa-solid fa-trash"
                   onClick={() => removeProduct(order.product)}
+                  onKeyUp={() => {}}
                   key={index}
                   data-testid={"trash-icon"}
                 ></i>

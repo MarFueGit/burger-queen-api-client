@@ -43,7 +43,7 @@ export default function VerPedidos() {
               <th>Cliente</th>
               <th>Producto</th>
               <th>Fecha creado</th>
-              <th>Estatus</th>
+              <th>Estado</th>
               <th>Acción</th>
             </tr>
           </thead>
@@ -64,7 +64,7 @@ export default function VerPedidos() {
                   </ul>
                 </td>
                 <td data-label="Fecha">{order.dataEntry}</td>
-                <td data-label="Status">{order.status}</td>
+                <td data-label="Estado">{order.status}</td>
                 <td data-label="Acción">
                   <button
                     onClick={() => updateOrderById(order.id, "done")}

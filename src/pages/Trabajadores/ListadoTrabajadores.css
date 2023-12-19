@@ -1,0 +1,14 @@
+.boton-trabajador{
+display: flex;
+justify-content: end;
+margin-right: 10px;
+
+
+
+
+}
+.boton-trabajador button{
+    padding: 10px;
+    border: 1px solid #ee9b00;
+    
+}

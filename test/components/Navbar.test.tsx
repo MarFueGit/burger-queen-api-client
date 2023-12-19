@@ -15,18 +15,15 @@ describe("Navbar components", () => {
     // Actuar / Act
     // damos click en logo burguer
     fireEvent.click(getByAltText("logoBurger"));
-    fireEvent.click(getByText("Ingresar pedido"));
-    fireEvent.click(getByText("ver pedidos"));
-    fireEvent.click(getByText("pedidos listos"));
-    fireEvent.click(getByText("Historial de pedidos"));
+    fireEvent.click(getByText("Pedidos"));
+    fireEvent.click(getByText("Trabajadores"));
+    fireEvent.click(getByText("Productos"));
     fireEvent.click(getByText("Cerrar sesión"));
 
     // 3. Verificar // Assert
-    expect(getByText(/Ingresar pedido/).textContent).toBe("Ingresar pedido");
-    expect(getByText(/ver pedidos/).textContent).toBe("ver pedidos");
-    expect(getByText(/pedidos listos/).textContent).toBe("pedidos listos");
-    expect(getByText(/Historial de pedidos/).textContent).toBe(
-      "Historial de pedidos"
-    );
+    expect(getByText("Pedidos", { selector: "a.active" })).not.toBeNull();
+    expect(getByText(/Trabajadores/).textContent).toBe("Trabajadores");
+    expect(getByText(/Productos/).textContent).toBe("Productos");
+    expect(getByText(/Cerrar sesión/).textContent).toBe("Cerrar sesión");
   });
 });

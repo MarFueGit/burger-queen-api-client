@@ -41,7 +41,7 @@ export default function PedidosListos() {
               <th>Cliente</th>
               <th>Producto</th>
               <th>Fecha Terminado</th>
-              <th>Estatus</th>
+              <th>Estado</th>
               <th>Acción</th>
             </tr>
           </thead>
@@ -62,7 +62,7 @@ export default function PedidosListos() {
                   </ul>
                 </td>
                 <td data-label="Fecha">{order.dateProcessed}</td>
-                <td data-label="Status">{order.status}</td>
+                <td data-label="Estado">{order.status}</td>
                 <td data-label="Acción">
                   <button
                     onClick={() => updateOrderById(order.id, "delivered")}

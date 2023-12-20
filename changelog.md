@@ -106,3 +106,25 @@ Agregue estilos a los iconos de sumar y restar.
 ### Removed
 
 No se removio nada.
+
+
+### Sprint 6
+
+Empece la historia de usuario 5, agregar, editar y eliminar trabajador.
+
+
+### Added
+
+Se agrego la carpeta trabajadores, dentro de ella el archivo ListadoTrabajadores, la carpeta AgregarTrabajador, dentro de ella el archivo AgregarTrabajador, la carpeta EditarTrabajador y dentro de ella el archivo EditarTrabajador.
+
+### Changed
+
+se hizo cambios el Navbar
+
+### Fixed
+
+Agregue dos componentes: Trabajadores y Productos.
+
+### Removed
+
+No se removio nada.

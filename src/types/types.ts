@@ -32,5 +32,5 @@ export type User = {
   email: string;
   password: string;
   role: string;
-  id: number;
-}
+  id?: number;
+};

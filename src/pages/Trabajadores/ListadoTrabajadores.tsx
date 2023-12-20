@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import "./ListadoTrabajadores.css";
-import { getUsers } from "../../services/users.service";
+import { deleteUserById, getUsers } from "../../services/users.service";
 import { User } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 
@@ -62,7 +62,7 @@ export default function ListadoTrabajadores() {
                 <td data-label="Acción">
                   <button
                     disabled={currentUser?.role !== "admin"}
-                    onClick={() => alert("Deseas Editar")}
+                    onClick={() => navigate("/editar-trabajador/" + user.id)}
                   >
                     <i className="fa-solid fa-pencil"></i>
                   </button>
@@ -70,7 +70,15 @@ export default function ListadoTrabajadores() {
                 <td data-label="Acción">
                   <button
                     disabled={currentUser?.role !== "admin"}
-                    onClick={() => alert("Deseas eliminar")}
+                    onClick={async () => {
+                      // alert("Estas seguro que quieres eliminar este trabajador")
+                      // Falta popup para confirmar
+                      const userDeleted = await deleteUserById(Number(user.id));
+                      if (userDeleted) {
+                        alert("Se elimino el usuario");
+                        window.location.reload();
+                      }
+                    }}
                   >
                     <i className="fa-solid fa-trash"></i>
                   </button>

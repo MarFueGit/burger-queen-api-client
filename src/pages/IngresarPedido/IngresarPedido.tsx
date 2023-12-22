@@ -59,7 +59,7 @@ export default function IngresarPedido() {
     setProducts(filteredProducts);
   };
 
-  //Agregamos el nombre del clinte de tipo string y lo seteamos dentro de setUserOrder.
+  //Agregamos el nombre del cliente de tipo string y lo seteamos dentro de setUserOrder.
   const addNameClient = (name: string) => {
     setUserOrder({
       ...userOrder,

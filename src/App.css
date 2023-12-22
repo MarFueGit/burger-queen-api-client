@@ -28,7 +28,16 @@ button{
    
 }
 input{
-    border: none;
+  border: none;
+}
+
+input[type="text"],
+input[type="number"]{
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  
 }
 ul{
   list-style: none;

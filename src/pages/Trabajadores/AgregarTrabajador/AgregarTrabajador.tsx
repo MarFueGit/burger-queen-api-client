@@ -1,26 +1,16 @@
-import { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar";
-import { useNavigate, useParams } from "react-router-dom";
-import { getUserById, updateUserById } from "../../services/users.service";
-import { User } from "../../types/types";
+import { useState } from "react";
+import Navbar from "../../../components/Navbar";
+import "./AgregarTrabajador.css";
+import { useNavigate } from "react-router-dom";
+import { createUser } from "../../../services/users.service";
+import { Token } from "../../../types/types";
 
-export default function EditarTrabajador() {
+export default function AgregarTrabajador() {
   // usamos el hook useNavigate para navegar a AgregarTrabajador
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [role, setRole] = useState<string>("");
-  const { userId } = useParams();
-
-  useEffect(() => {
-    getUserById(Number(userId))
-      .then((user: User) => {
-        setEmail(user.email);
-        setPassword(user.password);
-        setRole(user.role);
-      })
-      .catch((error) => console.error(error));
-  }, []);
 
   return (
     <section>
@@ -33,24 +23,16 @@ export default function EditarTrabajador() {
           action=""
           onSubmit={async (e) => {
             e.preventDefault();
-            const userToUpdate: User = {
-              email,
-              password,
-              role,
-            };
-            const updatedUser: User = await updateUserById(
-              Number(userId),
-              userToUpdate
-            );
-            if (updatedUser) {
+            const newUser: Token = await createUser(email, password, role);
+            if (newUser.accessToken) {
               navigate("/listado-trabajadores");
             } else {
-              alert("Hubo un error al editar el usuario");
+              alert("Hubo un error al crear el usuario");
             }
           }}
         >
-          <h2>Editar trabajador</h2>
-          <label htmlFor="email">
+          <h2>Agregar trabajador</h2>
+          <label>
             <input
               required
               onChange={(e) => setEmail(e.target.value)}
@@ -60,7 +42,7 @@ export default function EditarTrabajador() {
               name="email"
             />
           </label>
-          <label htmlFor="password">
+          <label >
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
@@ -83,7 +65,7 @@ export default function EditarTrabajador() {
             <option value="chef">Chef</option>
             <option value="waiter">Waiter</option>
           </select>
-          <button type="submit">Actualizar</button>
+          <button type="submit">Enviar</button>
         </form>
       </div>
     </section>

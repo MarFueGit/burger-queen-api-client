@@ -13,7 +13,7 @@ export const sendOrder = (order: Order): Promise<Order> =>
       },
       body: JSON.stringify(order),
     };
-    fetch(`https://mary-burger-queen-api-mock.onrender.com/orders`, options)
+    fetch(`http://localhost:8080/orders`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));
@@ -30,7 +30,7 @@ export const getOrders = (): Promise<Order[]> =>
         Authorization: `Bearer ${token}`,
       },
     };
-    fetch(`https://mary-burger-queen-api-mock.onrender.com/orders`, options)
+    fetch(`http://localhost:8080/orders`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));
@@ -52,7 +52,7 @@ export const updateOrder = (
       },
       body: JSON.stringify({ status, dateProcessed }),
     };
-    fetch(`https://mary-burger-queen-api-mock.onrender.com/orders/${id}`, options)
+    fetch(`http://localhost:8080/orders/${id}`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));

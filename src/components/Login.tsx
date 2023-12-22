@@ -42,7 +42,7 @@ export default function Login() {
         <img className="logo-burger" src={LogoBurguer} alt="logo burguer" />
         <h1>BIENVENIDO A BURGER QUEEN</h1>
         <form action="">
-          <label htmlFor="">Email</label>
+          <label>Email</label>
           <input
             type="email"
             name="email"
@@ -52,7 +52,7 @@ export default function Login() {
             value={email}
           />
 
-          <label htmlFor="">Contraseña </label>
+          <label>Contraseña </label>
           <input
             type="password"
             name="password"

@@ -40,7 +40,7 @@ export default function Navbar() {
           <a onClick={() => navigate("/listado-trabajadores")}>Trabajadores</a>
         </li>
         <li>
-          <a>Productos</a>
+          <a onClick={() => navigate("/lista-productos")}>Productos</a>
         </li>
         {/* <li>
           <a onClick={() => navigate("/historial-pedidos")}>Historial de pedidos</a>

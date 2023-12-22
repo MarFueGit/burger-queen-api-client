@@ -15,7 +15,7 @@ export const login = (email: string, password: string): Promise<Token> =>
       },
       body: JSON.stringify(data),
     };
-    fetch(`https://mary-burger-queen-api-mock.onrender.com/login`, options)
+    fetch(`http://localhost:8080/login`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));

@@ -12,7 +12,7 @@ export const getUsers = (): Promise<User[]> =>
         Authorization: `Bearer ${token}`,
       },
     };
-    fetch(`https://mary-burger-queen-api-mock.onrender.com/users`, options)
+    fetch(`http://localhost:8080/users`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));
@@ -37,7 +37,7 @@ export const createUser = (
       },
       body: JSON.stringify(data),
     };
-    fetch(`https://mary-burger-queen-api-mock.onrender.com/users`, options)
+    fetch(`http://localhost:8080/users`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));
@@ -54,10 +54,7 @@ export const getUserById = (userId: number): Promise<User> =>
         Authorization: `Bearer ${token}`,
       },
     };
-    fetch(
-      `https://mary-burger-queen-api-mock.onrender.com/users/${userId}`,
-      options
-    )
+    fetch(`http://localhost:8080/users/${userId}`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));
@@ -75,10 +72,7 @@ export const updateUserById = (userId: number, user: User): Promise<User> =>
       },
       body: JSON.stringify(user),
     };
-    fetch(
-      `https://mary-burger-queen-api-mock.onrender.com/users/${userId}`,
-      options
-    )
+    fetch(`http://localhost:8080/users/${userId}`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));
@@ -95,10 +89,7 @@ export const deleteUserById = (userId: number): Promise<User> =>
         Authorization: `Bearer ${token}`,
       },
     };
-    fetch(
-      `https://mary-burger-queen-api-mock.onrender.com/users/${userId}`,
-      options
-    )
+    fetch(`http://localhost:8080/users/${userId}`, options)
       .then((response) => response.json())
       .then((response) => resolve(response))
       .catch((err) => reject(err));

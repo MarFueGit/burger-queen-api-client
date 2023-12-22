@@ -7,8 +7,11 @@ import VerPedidos from "./components/VerPedidos";
 import PedidosListos from "./components/PedidosListos";
 import HistorialPedidos from "./components/HistorialPedidos";
 import ListadoTrabajadores from "./pages/Trabajadores/ListadoTrabajadores";
-import AgregarTrabajador from "./pages/AgregarTrabajador/AgregarTrabajador";
-import EditarTrabajador from "./pages/EditarTrabajador/EditarTrabajador";
+import AgregarTrabajador from "./pages/Trabajadores/AgregarTrabajador/AgregarTrabajador";
+import EditarTrabajador from "./pages/Trabajadores/EditarTrabajador/EditarTrabajador";
+import ListaProductos from "./pages/Productos/ListaProductos";
+import AgregarProducto from "./pages/Productos/AgregarProducto/AgregarProducto";
+import EditarProducto from "./pages/Productos/EditarProducto/EditarProducto";
 
 // Creamos nuestro router de rutas
 const router = createBrowserRouter([
@@ -47,6 +50,18 @@ const router = createBrowserRouter([
   {
     path: "/editar-trabajador/:userId",
     element: <EditarTrabajador />,
+  },
+  {
+    path: "/lista-productos/",
+    element: <ListaProductos />,
+  },
+  {
+    path: "/agregar-producto/",
+    element: <AgregarProducto />,
+  },
+  {
+    path: "/editar-producto/:productId",
+    element: <EditarProducto />,
   },
 ]);
 
